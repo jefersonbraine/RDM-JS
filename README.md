@@ -115,7 +115,7 @@ linguagem:
 -----------------------------------------------------
 Terminal:
 
-undefined
+`undefined`
 -----------------------------------------------------
 
  - Symbol (Simbolo): um recurso mais recente da linguagem
@@ -144,7 +144,7 @@ Os operadores integrados ao JavaScript e seus símbolos são os seguntes:
   --------------------------------
   Terminal:
 
-  38.5
+  `38.5`
   -------------------------------
  - Subtract (Subtrair): -
 
@@ -152,7 +152,7 @@ Os operadores integrados ao JavaScript e seus símbolos são os seguntes:
   --------------------------------
   Terminal:
 
-  36
+  `36`
   -------------------------------
   - Multiply (Multiplicar): *
 
@@ -160,7 +160,7 @@ Os operadores integrados ao JavaScript e seus símbolos são os seguntes:
   --------------------------------
   Terminal:
 
-  27.621599999999997
+  `27.621599999999997`
   -------------------------------
   - Divide (Dividir): /
 
@@ -168,7 +168,7 @@ Os operadores integrados ao JavaScript e seus símbolos são os seguntes:
   --------------------------------
   Terminal:
 
-  0.35625
+  `0.35625`
   -------------------------------
   - Remainder (Restante): %
 
@@ -176,7 +176,7 @@ Os operadores integrados ao JavaScript e seus símbolos são os seguntes:
   --------------------------------
   Terminal:
 
-  1
+  `1`
   -------------------------------
 
 #CONCATENAÇÃO DE STRINGS
