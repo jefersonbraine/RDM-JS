@@ -61,11 +61,11 @@ no final para comentários de várias linhas
 
 Também é possivel comentar algo no meio de uma linhas de código
 
-`console.log(/*Boas-vindas a*/ 'Explicação');
+`console.log(/*Boas-vindas a*/ 'Explicação');`
 ---------------------------------------------------
 Terminal:
 
-Explicação
+`Explicação`
 ------------------------------------------------------
 
 
