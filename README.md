@@ -348,3 +348,92 @@ uma pessoa usuária, número de telefone ou mesmo uma mensagem de saudação**,
 ou seja, qualquer tipo de dado seja ele **string, número ou booleano**.
 
 ![variavel](./images/var-1.png)
+
+Por rotular, entende-se nomear descritivamente os dados, facilitando
+a leitura e entendimento por outras pessaos e nós mesmos.
+
+    `var pessoaUsuaria = 'Maiara';`
+
+    `var idade = 23;`
+
+    `var programando = true;`
+
+# CRIANDO UMA VARIÁVEL: var
+
+A palavra-chave `var` foi usada em todo o código JavaScript de 1995 a 2015, quando
+a versão ECMAScript 6 (ES6) introduziu duas novas palavras-chaves para declarar variáveis:
+`let` e `const`.
+
+Até então, as pessoas programadores só podiam usar `var`para declarar variáveis.
+
+Atualmente, se você quiser que seu código seja executado em um navegador mais antigo, você
+deve usar `var`.
+
+    `var pessoaUsuaria = 'Maiara';
+    console.log(pessoaUsuaria);`
+--------------------------------
+    Terminal:
+    `Maiara`
+--------------------------------
+
+`var`, abreviação de variável, é uma palavra-chave JavaScrpt que declara (cria) uma nova variável;
+
+`pessoaUsuaria`, é o nome da variável. A escrita dessa maneira, onde agrupa-se as palavras em
+uma e a primeira palavra é minuscula, e cada palavra que segue tem a primeira letra maiuscula
+é uma convenção padrõa em JavaScript chamada camel casing (caixa de camelo). 
+Outro exemplo: `camelCaseExcemplo;`
+
+`=` é o operador de atribuição que atribui o valor `('Maiara')` a variável `(pessoaUsuaria);
+
+`'Maiara'` é o valor atribuido `(=)` à variável `pessoaUsuaria`. foi inicializada com o 
+o valor de `'Maiara'`.
+
+Após a declaração da variável, o valor da string `Maiara` é impresso no console
+utilizando como referência o nome da variável, assim:
+`console.log(pessoaUsuaria).`
+
+Existem regas para nomear variáveis:
+
+ - Os nomes das variáveis não podem começar com números;
+
+ - Os nomes das variáveis diferenciam maiscula e minúsculas
+ portanto, `pessoaUsuaria` é diferente de `pessoausuaria`.
+ Não é uma boa prática criar duas variáveis com o mesmo nome
+ utilizando maiúsculas e minúsculas em situações diferentes.
+
+ - Os nomes das variáveis não podem ser iguais às palavras-chave do JavaScript.
+
+# CRIANDO UMA VARIÁVEL: let
+
+A palavra-chave `let` foi introduzida em 2015 na versão ECMAScript 6 (ES6) e sinaliza
+que a variável pode ser reatribuida com um valor diferente. Por exemplo:
+
+    `let almocoSabado = 'Feijoada';
+    console.log(almocoSabado);
+
+    almocoSabado = 'Churrasco';
+    console.log(almocoSabado);`
+--------------------------------
+    Terminal:
+    `Feijoada`
+    `Churrasco`
+--------------------------------
+
+Outro ponto que deve-se observar ao utilizar `let` (e até `var`) é que é possivel declarar
+uma variável sem necessariamente atribuir a ela um valor. Dessa forma, a variável será
+iniciliazada como um valor `undefined`. Exemplo:
+
+    `let diaDaSemana;
+    console.log(daDaSemana);
+
+    diaDaSemana = 'Sabado';
+    console.log(diaDaSemana);`
+--------------------------------
+    Terminal:
+    `undefined`
+    `Sabado`
+--------------------------------
+
+No exemplo, inicialmente não foi atribuido um valor à variável `diaDaSemana` e ela
+automaticamente inicializou com um valor `undefined`. Em seguida, atribuiu-se o valor
+`'Sábado'` à variável.
