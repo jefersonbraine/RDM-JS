@@ -11,7 +11,7 @@ OK, não tudo, mas é maravilhoso o que se pode efetuar com algumas linhas de C�
 
 Junto com HTML e CSS, é uma tecnologia central que faz a web funcionar.
 
-##CONSOLE
+## CONSOLE
 
 O console é um painel que exibe mensagens importantes para as pessoas desenvolvedoras.
 Muito do trabalho que o computador faz com o código é invisivel para nós por padrão. Se
@@ -34,7 +34,7 @@ Boas-vindas a essa explicação
 O método console.log() é usado para registrar ou imprimir mensagens no console, mas também
 pode ser usado para imprimir objetos e outras informações.
 
-##COMENTÁRIOS
+## COMENTÁRIOS
 
 Seu próprio código pode tornar-se dificil de ser entendido quando você retornar a ele tempos
 depois. Além disso, programar é uma atividae colaborativa, Por esses motivos, é útil deixar 
@@ -69,7 +69,7 @@ Terminal:
 ------------------------------------------------------
 
 
-##TIPOS DE DADOS
+## TIPOS DE DADOS
 
 Os tipos de dados são as classificações dos diferentes tipos de dados usados na
 programação. Em JavaScript, o mais recente padrão ECMAScript 6 define sete tipos de dados
