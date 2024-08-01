@@ -347,4 +347,4 @@ informações. Tais informações podem ser **o nome de
 uma pessoa usuária, número de telefone ou mesmo uma mensagem de saudação**,
 ou seja, qualquer tipo de dado seja ele **string, número ou booleano**.
 
-url(./images/var-1.png)
+![variavel](path/to/var-1.png)
