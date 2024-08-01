@@ -684,3 +684,562 @@ Obsever no exemplo abaixo como um literal de modelo é usado para registrar stri
     Terminal:
     `boolean`
 --------------------------------
+
+# DECLARAÇÕES CONDICIONAIS
+
+Todos os dias, a todo momento, tomamos decisões com base em circusntâncias que
+afetam nossas vidas.
+
+Pense por exemplo, que se uma pessoa está com fome, deverá comer um hambúrguer.
+Caso contrário comer depois.
+
+![declarar condicional](./images/dec-1.png)
+
+
+As declarações condicionais permitem representar tomadas de decisão como esta
+em JavaScript, a partir da escolha que deve ser feita, como "comer hambúrguer" ou
+"comer depois".
+
+Essas decisões chamadas de if ... else ( se ... senão ) podem ser tomadas 
+em código por meio da criação de instruções condicionais.
+
+Uma instrução condicional verifica uma ou mais condições específicas e executa uma tarefa
+com base na condição ou nas condições, caso seja mais de uma.
+
+## Sintaxe básica if ... else
+
+Veja a sintade básica de `if...else` no pseudocódigo:
+
+`if (condicao) {
+    codigo para executar caso a condição seja verdadeira;
+} else {
+    senão, executar este código
+}`
+
+### Aqui nós temos:
+
+ 1. A palavra reservada `if`seguida de um de parêntesese.\
+
+ 2. Um teste condicional, localizado dentro dos parênteses.
+ (normalmente "este valor é maior que esse", ou "este valor existe"). Esta condição pode fazer uso
+ dos operadores de comparação: `==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`,  e podem retornar
+ `true` ou `false`.	
+
+ 3. Um par de chaves, e dentro dele temos código -- pode ser qualquer código que queiramos,
+ e só vai ser executado se o teste condicional retornar `true`.
+
+ 4. A palavra reservada `else`.
+
+ 5. Outro par de chaves, dentro dele temos mais um pouco de código -- pode ser qualquer código que queiramos,
+ e só vai executar se o teste condicional retornar um valor diferente de `true`, neste caso `not true`, ou `false`.
+
+Este tipo de código é bem legível por seres humanos -- ele diz: **if** a condição for `true`, execute o bloco de código A, **else** 
+execute o bloco de código B. (**se** a condição for **verdadeira**, execute o bloco de codigo A, **senão** execute o bloco de codigo B).
+
+
+### Exemplo:
+
+Para entender bem a sintaxe, vamos considerar um exemplo real. Imagine um filho sendo chamado pra ajudar com as tarefas
+do Pai ou da Mãe. Os pais podem falar: "Ei querido, se você me ajudar a ir fazer as compras, eu te dou uma grana extra
+para que você possa comprar aquele brinquedo que você quer". Em JavaScript, podemos representar isso como:
+
+`var comprasFeitas = false;
+
+if (comprasFeitas === true) {
+    var granaFilho = 100;
+} else {
+    var granaFilho = 50;
+}`
+
+Esse código como mostrado irá sempre resultar na variável `comprasFeitas`retornando `false`, endo um
+desapontamento para nossas nossas pobres crianças, Cabe a nós fornecer um mecanismo para o pai
+definir a variável `comprasFeitas`como `true` se o filho fez as comrpas.
+
+### else if
+
+O último exemplo nos forneceu duas opções ou resultados - mas e se quisermos mais do que dois?
+
+Existe uma maneira de encadear escolhas/resultados extras ao seu `if...else` --- usando `else if`. 
+Cada escolha extra requer um bloco adicional para colocar entre `if() {...}` e `else {...}` -- confira
+o seguinte exemplo mais envolvido, que pode fazer parte de um aplicativo simples de previsão do tempo:
+
+`HTML
+
+<laber for="wheater">Select the weather type today</label>
+<select id="wheater">
+    <option value="">--Make a choice--</option>
+    <option value="sunny">Sunny</option>
+    <option value="rainy">Rainy</option>
+    <option value="snowing">Snowing</option>
+    <option value="overcast">Overcast</option>
+</select>
+
+<p></p>
+`
+
+`JS
+
+    var select = 
+    document.querySelector("select");
+    var para = 
+    document.querySelector("p");
+
+    select.addEventListener("change", setWeather);
+
+    function setWeather() {
+        var choice = select.value;
+
+        if (choice === "sunny") {
+            para.textContent = "Today is sunny!";
+        } else if (choice === "rainy") {
+            para.textContent = "Today is rainy!";
+        } else if (choice === "snowing") {
+            para.textContent = "Today is snowing!";
+        } else if (choice === "overcast") {
+            para.textContent = "Today is overcast!";
+        } else {
+            para.textContent = "";
+        }
+    }
+
+1. Aqui temos um elemento HTML `<select>` que nos permite fazer escolhas de clima
+diferentes e um simples parágrafo.
+
+2. No JavaScript, estamos armazenando uma referência para ambos os elementos
+`<select>` e `<p>` e adicionando um **listener** de evento ao elemento `select`,
+para que, quando o valor for alterado, a função `setWeather` seja executada.
+
+3. Quando esta função é executada, primeiro definimos uma variável chamada `choice`,
+para o valor atual selecionado no elemento `select`. Em seguida, usamos uma
+instruçào condicional para mostrar um texto diferentee dentro do parágrafo,
+dependendo de qual é o valor de `choice`. Oberseve como todas as condições
+são testadas nos blocos `else if() {...}`, com exnceção do primeiro, que 
+é testado em um bloco  `if() {...}`.
+
+4. A última escolha, dentro do bloco `else{...}`, é basicamente uma opções de "último recurso" --- o 
+código dentro dele será executado se nenhuma das condições anteriores forem `true`. Nesse caso, ele
+serve para esvaziar o texto do parágrafo, se nada for selecionado, por exemplo, se um usuário decidir
+selecionar novamente a opção de espaço reservado "--Make a choice--" mostrada no inicio.
+
+
+# DECLARAÇÃO if
+
+Constantemente decidimos realizar uma tarefa tendo como base uma condição: se estiver frio,
+vou usar uma blusca; se chover, levo um guarda-chuva; se estiver com sono, durmo.
+
+Ao programar, também é possivel realizar uma tarefa baseando-se em uma condição.
+Para isso, utiliza-se a instrução `if`:
+
+    if (true) {
+        console.log('Vou usar uma blusa');
+    }
+--------------------------------
+    Terminal:
+    `Vou usar uma blusa`
+--------------------------------
+
+No exemplo:
+
+A palavra-chave `if` é seguida por um conjunto de parênteses () que é seguido por um bloco de código,
+ou instrução de bloco, indicada por um conjunto de chaves {}.
+
+dentro dos parênteses (), é fornecida uma condição que avalia para `true`ou `false`.
+
+se a condição for avaliada como `true`, o código dentro das chaves {} é executado.
+
+se a condição for avaliada como `false`, o código dentro das chaves {} não é executado.
+
+    if (false) {
+        console.log('Vou usar uma blusa');
+    }
+--------------------------------
+    Terminal:
+
+--------------------------------   
+
+# DECLARAÇÃO If ... Else
+
+Sabe-se que uma instrução `if`verificar uma condiçào e decide se um bloco de código deve
+ser executado quando a condição é avaliada como `true`.
+
+Em alguns casos, pode ser que queiramos que um outro bloco de código seja executado, caso a condição seja avaliada como `false`.
+
+Para adicionar um comportamente padrão à instrução `if`, adicione uma instrução `else`para executar um bloco de código quando a
+condição for avaliada como `false`.
+
+observe o exemplo:
+
+    if (false) {
+        console.log('Vou usar uma blusa');	
+    } else {
+        console.log('Não preciso da blusa');
+    }
+--------------------------------
+    Terminal:
+    `Não preciso da blusa`
+--------------------------------
+
+Uma declaração `else`deve ser utilizada como complemento à uma declaração `if` e, juntas
+são chamadas de declaração `if ... else`.
+
+No exemplo:
+
+ - A palavra-chave `else` foi adicionada após o bloco de código de uma instrução `if`.
+
+ - Possui um bloco de código que é envolvido por um conjunto de chave `{ }`.	
+
+ - O código dentro do bloco de código da instrução `else`foi executado quando a condição da instrução `if`
+ foi avaliada como `false`.
+
+Declarações `if ... else`permitem automatizar soluções para decisões binárias, como por exemplo,
+**perguntas de sim ou não**.
+
+# OPERADOS DE COMPARAÇÃO
+
+Utiliza-se operadores de comparação quando é preciso comparar valroes ao escrever declarações condicionais.
+
+Alguns operadores de comparaçào e suas sintaxes são:
+
+ - menor que: <
+ - maior que: >
+ - igual a: ===
+ - diferente de: !=
+ - maior ou igual a: >=
+ - menor ou igual a: <=
+
+Os operadores de comparação comparam o valor à esquerda com o valor à direita. Por exemplo:
+
+    100 > 50 // true
+
+Declarações de comparação podem ser entendidas como perguntas. Quando a resposta for "sim",
+a afirmação avaliada para `true`, e quando a resposta for "não", a afirmação avaliada para `false`.
+
+O exemplo acima teria como pergunta: `100` é maior que `50`? Sim, portando `100 > 50` é avaliado como `true`.
+
+É possível usar operadores de comparação em diferentes tipos de dados, comos trings:
+
+    'suco' === 'refrigerante' // false
+
+O operadore de identidade `(===)` verifica se a string `'suco'`é igual à string `'refrigerante'`.
+Como as duas strings não são iguais, a instruçào de comparação avalia como `false`.
+
+Todas as declarações de comparaçào avaliam `true` ou `false` e são compostas de:
+
+ - Dois valores que serão comparados.
+ - Um operador que separa os valores e os compara (>, <, <=, >=, ===, e !==).
+
+# OPERADORES LÓGICOS
+
+Em JavaScript, os operadores lógicos adicionam uma lógica mais sofisticada às condicionais,
+isto é, quando utilizamos valores booleanos, `true` ou `false`.
+
+Há três tips de operadores lógicos:
+
+ - Operador **e** `(&&)`: Retorna `true`se ambas as condições forem avaliadas como `true`.
+ - Operador **ou** `(||)`: Retorna `true`se pelo menos uma das condições forem avaliadas como `true`.
+ - Operador **not**, também conhecido como operador *bang* `(!)`: Retorna `true`se a condição for avaliada como `false`.
+
+Para verificar se dois elementos são `true`, utiliza-se o operador `&&`:
+
+    if (clima === 'chuvoso' && temperatura  15){
+        console.log('Use um casaco impermeável!`);
+    } else {
+        console.log('Use apenas um suéter.');
+    }
+
+O operadore `&&` verifica ambas as condições que devem ser avaliadas como `true` para que toda a condiçào seja avaliada como `true` e,
+assim, executar o bloco de código `if`.
+
+Caso uma das condições seja avaliada como `false`, a condição `&&` também será avaliada como `false`e o bloco de código `else` será executado.
+
+Se apenas uma das duas condições precisar ser avaliada como `true`, utilize o operador `||`.
+
+    if (nome === 'Ana' || nome === 'ana) {
+        console.log('Boas-vindas, Ana!');
+    } else {
+        console.log ('Boas-vindas, ' + nome + '!');
+    }
+
+Ao usar o operador ` || `, apenas uma das condições deve ser avaliada como `true`para que a instrução geral também seja avaliada como `true`.
+
+No exemplo, se `nome === 'Ana'` ou `nome === 'ana'` for avaliada como true, a condição `if` será avaliada como `true` e seu bloco de código será executado.
+
+Se a primeira condição em uma instrução `||` for avaliada como `true`, a segunda condição nem mesmo será verificada. Somente se `nome === 'Ana'` for avaliada como `false`
+é que `nome === 'ana'` será verificada.
+
+O bloco de código na instrução `else`será executado somente se ambas as comparações em `if`forem avaliadas como `false`.
+
+
+O operador not `(!)` inverte ou enga um valor booleano:
+
+    let programando = false;
+    console.log(!programando);
+--------------------------------
+    Terminal:
+    `true`
+--------------------------------
+
+    let sonolento = true;
+    console.log(!sonolento);
+--------------------------------
+    Terminal:
+    `false`
+--------------------------------
+
+O operador `!` inverte um valor `true`para `false`, e um valor `false` para `true`.
+
+Outra camada de lógica é adicionada ao código quando operadores lógicos são utilizados em
+declarações condicionais.
+
+# VALORES VERDADEIROS OU FALSOS
+
+Tipos de dados não booleanos, como strings ou números, também podem ser avaliados quando verificados em uma condição.
+
+Por vezes é necessário apenas verificar se há um valor na variável e não necessariamente verificar se esse valor é igual a um valor
+especifico.
+
+Ela deverá apenas ter um valor, seja ele qual for, em outras palavaras, é necessário apenas verificar se a variável recebeu um valor.
+
+    let verificarValor = 'Aqui existe um valor!';	
+
+
+    if (verificarValor){
+        console.log(verificarValor);
+    } else {
+        console.log('Não existe um valor!');
+    }
+--------------------------------
+    Terminal:
+    `Aqui existe um valor!`
+--------------------------------
+
+O bloco de código na instrução `if`foi executado por `verificarValor` tem um valor verdadeiro.
+
+Mesmo que o valor de `verificarValor` não seja explicitamente o valor `true`, quando usado em um contexto
+booleando ou condicional, ele é avaliado como `true` porque foi atribuído um valor não falso.
+
+Então, quais valores são falso - ou avaliado como `false` - quando verificados como uma condição?
+
+A lista de valroes falsos inclui:
+
+ - `0` (zero)
+ - strings variaz como " " ou ' '
+ - `null` (nulo) quando não há valor algum
+ - `undefined` (indefinido) quando há uma variável é declarada sem valor
+ - `NaN` (not a number) ou não é um número
+ - `false`
+
+Observe um exemplo com o número `0`:
+
+    let pessoasNaSala = 0;
+
+
+    if (pessoasNaSala) {
+        console.log('Manter a sala aberta');
+    } else {
+        console.log('Fechar a sala');
+    }
+--------------------------------
+    Terminal:
+    `Fechar a sala`
+--------------------------------
+
+A condição é avaliado como `false`porque o valor de pessoasNaSala é `0`. Como `0` é um valor falso, o bloco de código na instrução `else` será executado.
+
+# ATRIBUIÇÃO DE VERDADE OU FALSO
+
+Numa situação, por exemplo, em que seja preciso saudar uma pessoa usuária de forma
+personalziada utiliando seu nome, mas com a possibilidade dela ainda não ter uma conta
+tornando o `nomeUsuario` uma variável falsa, avaliações verdaderias e falsa (truthy and falsy)
+simplificaam bastante as coisas.
+
+Obsever no código abaixo como seria na prática. Ele verifica se `nomeUsuario` foi definido,
+e caso nenhum valor tenha sido fornecido, atribui uma string padrão.
+
+    let nomeUsuario = '';
+    let nomePadrao;
+
+    if (nomeUsuario){
+        nomePadrao = nomeUsuario;
+    } else {
+        nomePadraão = 'novo usuário';
+    }
+
+    console.log(nomePadrao);
+--------------------------------
+    Terminal:
+    `novo usuário`
+--------------------------------
+
+É possivel abreviar o código acima utilizando o operador lógico `||` em uma condição booleana:
+
+    let nomeUsuario = '';
+    let nomePadrao = nomeUsuario || 'novo usuário';
+
+    console.log(nomePadrao);
+--------------------------------
+    Terminal:
+    `novo usuário`
+--------------------------------
+
+A instrução `||` verificou a condição do lado esquerdo primeiro. Como o valor de `nomeUsuario`(`if`) foi atribuido como `false` (`''`), a instrução
+`else`com `'novo usuário'` foi avaliada como `true`e executada.
+
+Este conceito também é conhecido como avaliaçãod e curto-circuito. (Short Circuit Evaluation)
+
+# OPERADOR TERNÁRIO
+
+Com uma sintaxe abreviada que simplifica uma instrução `if ... else `, o operador ternário é como um atalho.
+
+Veja a declaração `if ... else` a seguir:
+
+    let noite = true;
+
+    if(noite){
+        console.log('Acender as luzes.');
+    } else {
+        console.log('Apagar as luzes.');
+    }
+--------------------------------
+    Terminal:
+    `Acender as luzes.`
+--------------------------------
+
+Utilizando o operador ternário, é possível escrever o mesmo
+código de forma simplificada mantendo a mesma funcionalidade. Observe:
+
+    let noite = true;
+
+    noite ? console.log ('Acender as luzes.') 
+    : console.log('Apagar as luzes.');
+--------------------------------
+    Terminal:
+    `Acender as luzes.`
+--------------------------------
+
+ - A condição `noite` foi fornecida antes de `?`.
+
+ - Duas expressões segue o `?` e são separadas por dois pontos : .
+
+ - Se a condição for avaliada como `true`, a primeira expressão será executada.
+
+Assim como as declarações `if ... else` , os operadores ternários são usados em condições
+para avaliar valroes como `true` ou `false`.
+
+# DECLARAÇÕES Else If
+
+É possível adicionar mais condições `if ... else` com uma declaração `else if`.
+
+A declaração `else if` permite mais de dois resultados possíveis, criando condicionais
+mais complexas com quantas instruçòes `else if` forem necessárias.
+
+A declaração `else if` sempre vem depois da declaração `if`e antes da declaração `else`.
+
+A declaração `else if` também exige uma condição. Veja a sintaxe:
+
+    let clima = 'Nublado';
+
+    if (clima === 'chuvoso') {
+        console.log('🌧️');
+    } else if (clima === 'nublado') {
+        console.log('☁️');
+    } else if (clima === 'Sol com nuvens') {
+        console.log('⛅');
+    } else (clima === 'Ensolarado') {
+        console.log('☀️');
+    }
+--------------------------------
+    Terminal:
+    `☁️`
+--------------------------------
+
+As declarações else if permite vários resultados possíveis.
+
+InstruçÕes `if/ else if/` else são lidas de cuma para baixo, então a primeira condição avaliada como true de cima para baixo
+é o bloco que será executado.
+
+No exemplo, uma vez que clima === 'Chuvoso'
+foi avaliado como false e clima ==== 'Nublado'
+avaliado como true, o código dentro da primeira instrução `else if` foi executado.
+
+As demais condições não foram avaliadas.
+
+Caso nenhuma das condições fosse avaliada como true, o código da instrução else teria sido executado.
+
+
+# SWITCH
+
+Ao programar, por vezes é necessário verificar vários valores e lidar com cada um de maneira diferente, sendo as declarações `else if`
+excelentes para situações assim. Veja:
+
+
+    let estacao = 'Verao';
+
+
+    if (estacao === 'Primavera') {
+        console.log ('É primavera! As flores estão brotando');
+    } else if (estacao === 'Outono') {
+        console.log ('É outono! O inverno está a caminho');
+    } else if (estacao === 'Verao') {
+        console.log ('É verao! Está quente e ensolarado');
+    } else {
+        console.log ('Não é essa estação?');
+    }
+--------------------------------
+    Terminal:
+    `É verao! Está quente e ensolarado`
+--------------------------------
+
+Temos uma série de condições verificando um valor que corresponda à variável `estacao`.
+
+O código funciona bem, mas imagine se fosse preciso verificar 100 valores diferentes?
+
+Ter que escrever tantos declarações `else if` seria **contraprodutivo**.
+
+Uma instrução `switch` fornece uma sintaxe alternativa que é mais fácil de ler e escrever.
+
+A declaração `switch` é escrita da seguinte maneira:
+
+
+    let estacao = 'Verao';
+
+
+    switch (estacao) {
+        case 'Primavera':
+            console.log ('É primavera! As flores estão brotando');
+            break;
+        case 'Outono':
+            console.log ('É outono! O inverno está a caminho');
+            break;
+        case 'Verao':
+            console.log ('É verao! Está quente e ensolarado');
+            break;
+        default:
+            console.log ('Não é essa estação?');
+            break;
+    }
+--------------------------------
+    Terminal:
+    `É verao! Está quente e ensolarado`
+--------------------------------
+
+A palavra-chave `switch` inicia a instrução e é seguida por `(...)`, que contém o valor que cada
+`case`irá comparar. No exemplo, o valor ou expressão da instrução `switch` é `estacao`.
+
+Dentro do bloco `{...}`, existem vários `cases`.
+
+A palavra-chave `case`verifica se a expressão corresponde ao valor especificado que vem depois dela.
+
+ O valor após o primeiro `case`é `'Primavera'`.
+ Se o valor de estacao fosse iual a `'Primavera'`, o console.log() do `case`seria executado.
+
+ O valor de estacao é `'Verao'`, portando, o terceiro `case` foi executado e `É verao! Está quente e ensolarado` foi exibido no console.
+
+A palavra-chave `break` diz ao computador para sair do bloco e não executar mais nenhum código ou verificar qualquer outro `case`dentro do bloco de código.
+
+Se palavras-chave `break`, o primeiro `case`correspondente será executado, mas o mesmo acontecerá com todas os `cases`subsequentes,
+indeopendentemente de haver correspondência ou não - incluindo o `default`.
+
+Esse comportamento é diferente de instruções `if ... else` em condicionais que executam apenas um bloco de código.
+
+Ai final de cada declaração `switch`, há uma declaração `default`. Se nenhum dos `cases`for verdadeiro`, o código da instrução `default` será executado.
