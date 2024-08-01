@@ -51,7 +51,7 @@ Em JavaScript, os **comentários de linha única** são criados com duas barras 
 
  `// Duas barras significam um comentário`
 
-Já os **comentários de várias linhas são criados circundando as linhas com /* no inicio e */
+Já os comentários de várias linhas são criados circundando as linhas com /* no inicio e */
 no final.
 
 `/*
@@ -86,10 +86,10 @@ linguagem:
 
  - String: qualquer agrupamento de caracteres
  (letras, números, espaços, símbolos, etc.)
- sempre entre aspas simpes '...' ou duplas "...".
+ sempre entre aspas simples '...' ou duplas "...".
 
     `let simples = 'Onde está o Niro?';
-    let duplas = "Onde está o Niro?";`
+     let duplas = "Onde está o Niro?";`
 
  - Boolean (Booleano): tipo de dado com apenas dois valores
   possiveis - True ou False. (verdadeiro ou falso) sem aspas.
@@ -115,7 +115,7 @@ linguagem:
 -----------------------------------------------------
 Terminal:
 
-`undefined`
+    `undefined`
 -----------------------------------------------------
 
  - Symbol (Simbolo): um recurso mais recente da linguagem
@@ -207,8 +207,8 @@ portando, deve-se incluir sempre o espaço desejado entre duas strings
 
     `console.log('Espaço no ' + 'inicio')
     console.log('Espaço' + ' no final');
-    console.log('Sem' + ' espaco');
-    console.log('Espaço' + ' ' + ' no meio');`
+    console.log('Sem' + 'espaco');
+    console.log('Espaço' + ' ' + 'no meio');`
 --------------------------------
     Terminal:
     `Espaço no inicio
@@ -218,7 +218,7 @@ portando, deve-se incluir sempre o espaço desejado entre duas strings
 --------------------------------
 
 No exemplo abaixo, várias strings e variáveis
-contendo valores de string serào concatenadas.
+contendo valores de string serão concatenadas.
 Após a execução do bloco de código, a variável
 **exibirPagamento** conterá a string concatenada.
 
@@ -264,7 +264,7 @@ devemos:
  - informar o nome do método
  - abrir e fechar os parenteses.
 
- Ex.: 'sitrngExemplo'.NomeMetodo();
+ Ex.: ('stringExemplo'.NomeMetodo());
 
  Ao usar console.log(), por exemplo,
  chamamos o método .log() no objeto 
@@ -334,6 +334,40 @@ baixo para o número inteiro mais proximo:
     Terminal:
     `45`
 --------------------------------
+
+O método `Math.ceil()` retorna o menor número inteiro maior ou igual a "x".
+
+    Math.ceil(0.95);
+--------------------------------
+    Terminal:
+    `1`
+--------------------------------
+
+    Math.ceil(4);
+--------------------------------
+    Terminal:
+    `4`
+--------------------------------
+    Math.ceil(-0.95);
+--------------------------------
+    Terminal:
+    `0`
+--------------------------------
+
+ O método `isInteger()` retorna `true` se o número for inteiro e `false` se o número for decimal.
+
+    Number.isInteger(value)
+--------------------------------
+    Number.isInteger(0);
+--------------------------------
+    Terminal:
+    `true`
+--------------------------------
+    Number.isInteger(0.1);
+--------------------------------
+    Terminal:
+    `false`
+
 ---------------------------------------------------------------------------------------------------------
 
 
@@ -350,7 +384,7 @@ ou seja, qualquer tipo de dado seja ele **string, número ou booleano**.
 ![variavel](./images/var-1.png)
 
 Por rotular, entende-se nomear descritivamente os dados, facilitando
-a leitura e entendimento por outras pessaos e nós mesmos.
+a leitura e entendimento por outras pessoas e nós mesmos.
 
     `var pessoaUsuaria = 'Maiara';`
 
@@ -437,3 +471,216 @@ iniciliazada como um valor `undefined`. Exemplo:
 No exemplo, inicialmente não foi atribuido um valor à variável `diaDaSemana` e ela
 automaticamente inicializou com um valor `undefined`. Em seguida, atribuiu-se o valor
 `'Sábado'` à variável.
+
+# CRIANDO UMA VARIÁVEL: const
+
+A palavra-chave `const` também foi introduzida em 2025 na versão ECMAScript 6 (ES6) e 
+é uma abreviação da palavra **constante**.
+
+Assim como `var` e `let` também armazenam qualquer valor em uma variável.
+A declaração de uma variável `const` segue a mesa estrutura das demais.
+Observe abaixo:
+
+    const pessoaUsuaria = 'Bia';
+    console.log(pessoaUsuaria);
+--------------------------------
+    Terminal:
+    `Bia`
+--------------------------------
+
+A diferença é que a variável `const` não poder ser reatribuida porque é constante.
+Ao tentar reatribuir uma variável `const`, obtem-se um `TypeError`.
+
+    const quantidadeDias = 20;
+    console.log(quantidadeDias);
+
+    quantidadeDias = 30;
+    console.log(quantidadeDias);
+--------------------------------
+    Terminal:
+    `20`
+    `TypeError: Assignment to constant variable.`
+--------------------------------
+
+Além disso, as variáveis constante devem receber um valor quando são declaradas.
+Ao tentar declarar uma variável `const` sem um valor, obtem-se um `SyntaxError`.
+
+    const quantidadeDias;
+    console.log(quantidadeDias);
+--------------------------------
+    Terminal:
+    `ReferenceError: quantidadeDias is not defined`
+--------------------------------
+
+Para decidir-se entre qual palavra-chave usar, `let` ou `const`, pense se
+será necessário reatribuir um valor à variável no futuro. Se for preciso
+reatribuir a variável `let`, caso contrário, use `const`.
+
+# OPERADORES DE ATRIBUIÇÃO  
+
+Observe como é possível usar variáveis e operadores matemáticos para
+calcular novos valores e atribuí0los a uma variável:
+
+    let ano = 2021;
+    ano = ano + 1;
+
+    console.log(ano);
+--------------------------------
+    Terminal:
+    `2022`
+--------------------------------
+
+No exemplo, foi declara a variável `ano` com o número 2021, atribuída a ela.
+Na linha seguinte `ano = ano + 1`, aumentar o valor de ano para 2022.
+
+Outra forma de reatribuir `ano`é utilizar operadores de atribuição matemática
+embutidos. Pode-se reescrever o código acima da seguinte maneira:
+
+    let ano = 2021;
+    ano += 1;
+
+    console.log(ano);
+--------------------------------
+    Terminal:
+    `2022`
+--------------------------------
+
+O operador de atribuição embutido `+=` foi utilizado para reatribuir `ano`,
+sendo realizada a operação matemática de soma do primeiro operador `+`
+com o número à direita e, em seguida, reatribuindo `ano` ao valor calculado.
+
+Estes são outros operadores de atribuição matemática que funcionam de forma
+semelhante: `-=, *= e /=`.
+
+    let a = 30;
+    a -= 12; // o mesmo que a = a - 12;
+
+    console.log(a);
+--------------------------------
+    Terminal:
+    `18`
+--------------------------------
+
+    let b = 24;
+    b *= 3; // o mesmo que b = b * 3;
+
+    console.log(b);
+--------------------------------
+    Terminal:
+    `72`
+--------------------------------
+
+    let c = 120;
+    c /= 2; // o mesmo que c = c / 2;
+
+    console.log(c);
+--------------------------------
+    Terminal:
+    `60`
+--------------------------------
+
+# INCREMENTO E DECREMENTO
+
+Dentre os operadores de atribuição matemática inclue-se o operador de incremento
+`(++)` e decremento `(--)`.
+
+Observe que o operador de incremento aumenta o valor da variável em 1:
+
+    let alpha = 35;
+    alpha++;
+
+    console.log(alpha);
+--------------------------------
+    Terminal:
+    `36`
+--------------------------------
+
+Já o operador de decremento diminui o valor da variável em 1:
+
+    let beta = 49;
+    beta--;
+
+    console.log(beta);
+--------------------------------
+    Terminal:
+    `48`
+--------------------------------
+
+Assim como os demais operadores de atribuiçào matemáticos `(+=, -=, *= e /=)`,
+o valor o valor da variável é atualizado e atribuido como o novo valor dessa variável.
+
+# CONCATENAR STRINGS E VARIÁVEIS
+
+O operador `+` tabém pode ser usado para combinar dois valores de string, ainda que
+esses valores estiverem sendo armazenados em variáveis. Veja a seguir:
+
+    let appFavorito = 'Insta';
+
+    console.log('Uso muito o ' + appFavorito + '!');
+--------------------------------
+    Terminal:
+    `Uso muito o Insta!`
+--------------------------------
+
+O valor `Insta` foi atribuido à variável `appFavorito`.	
+
+Em seguida o operador `+` foi usado para combinar três strings: `'Uso muito o '`, 
+o valor salvo em `appFavorito` e `'!'`.
+
+Por fim, o valor final da concatenaçào foi registrado no console.
+
+
+# INTERPOLAÇÃO DE STRINGS
+
+É possivel inserir ou interpolar variáveis em strings usando literais de modelo
+(template literals).
+
+Obsever no exemplo abaixo como um literal de modelo é usado para registrar strings juntas:
+
+    let appFavorito = 'Insta';
+
+    console.log(`Uso muito o ${appFavorito}!`);
+--------------------------------
+    Terminal:
+    `Uso muito o Insta!`
+--------------------------------
+
+ - Um literal de modelo é envolvido por crases ``.
+
+ - Dentro do literal do modelo, há um espaço reservado
+ ${appFavorito}. O valor de `appFavorito` é inserido no literal do modelo.
+
+ O maior benefício de usar literais de modelo é a legibilidade do código, facilitando
+ identificar qual será a nova string, Além disso, não é necessário preocupar-se com a combinação
+ de aspas duplas ou aspas simples.
+
+ # OPERADOR TYPEOF
+
+ O operador typeof verifica o valor à sua direita e retorna (devolve)
+ uma string do tipo de dados.
+
+ Por vezes pode ser útil controlar os tipos de dados variáveis no código.
+
+ Caso seja preciso verificar o tipo de dado do valor de uma variável,
+ utilize o operador **typeof**
+
+    const pessoaUsuaria = 'Jamile';
+    console.log(typeof pessoaUsuaria);
+--------------------------------
+    Terminal:
+    `string`
+--------------------------------
+
+    const idade = 27;
+    console.log(typeof idade);
+--------------------------------
+    Terminal:
+    `number`
+--------------------------------
+
+    const programando = true;
+    console.log(typeof.programando);
+--------------------------------
+    Terminal:
+    `boolean`
+--------------------------------
