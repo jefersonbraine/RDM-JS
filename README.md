@@ -334,3 +334,17 @@ baixo para o número inteiro mais proximo:
     Terminal:
     `45`
 --------------------------------
+---------------------------------------------------------------------------------------------------------
+
+
+# O QUE SÃO VARIÁVEIS?
+
+Variáveis são objetos que rotulam e armazenam dados
+na memória do computador.
+
+Pense em variáveis como pequenas caixas que guardam 
+informações. Tais informações podem ser **o nome de
+uma pessoa usuária, número de telefone ou mesmo uma mensagem de saudação**,
+ou seja, qualquer tipo de dado seja ele **string, número ou booleano**.
+
+url(./images/var-1.png)
