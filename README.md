@@ -1020,7 +1020,7 @@ booleando ou condicional, ele é avaliado como `true` porque foi atribuído um v
 
 Então, quais valores são falso - ou avaliado como `false` - quando verificados como uma condição?
 
-A lista de valroes falsos inclui:
+A lista de valores falsos inclui:
 
  - `0` (zero)
  - strings variaz como " " ou ' '

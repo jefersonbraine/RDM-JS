@@ -95,3 +95,30 @@ if (programando) {
 } else {
     console.log('Ops.... algo deu errado!');
 }
+
+let fraseFavorita = 'Adoro isso!';
+
+if (fraseFavorita === 'Adoro isso!') {
+    console.log('Eu gosto muito disso!');
+} else {
+    console.log('Eu não gosto disso!');
+}
+
+
+//Refatorado usando operadores ternários
+
+fraseFavorita === 'Adoro isso!' ? console.log('Eu gosto muito disso!') : console.log('Eu não gosto disso!');
+   
+
+let luzSemaforo = 'amarela';
+
+if (luzSemaforo === 'vermelha') {
+    console.log('Pare!');
+} else if (luzSemaforo === 'amarela') {
+    console.log('Atenção!');
+} else if( luzSemaforo === 'verde' ) {
+    console.log('Pode passar');
+} else {
+    console.log('Cuidado! Semáforo com defeito');	
+}
+ 
