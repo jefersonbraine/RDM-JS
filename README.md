@@ -1243,3 +1243,71 @@ indeopendentemente de haver correspondência ou não - incluindo o `default`.
 Esse comportamento é diferente de instruções `if ... else` em condicionais que executam apenas um bloco de código.
 
 Ai final de cada declaração `switch`, há uma declaração `default`. Se nenhum dos `cases`for verdadeiro`, o código da instrução `default` será executado.
+
+
+# O QUE SÃO FUNÇOES?	
+ 
+Uma função é um bloco de código reutilizável que agrupa uma sequência de instruções para executar uma tarefa específica
+ou calcular um valor.
+
+Pense que para calcular a área de um retângulo há uma sequência de etapas para chegar na resposta correta:
+
+ 1. Medir a largura do retângulo.
+ 2. Medir a altura do retângulo.
+ 3. Multiplicar a largura pelo valor da altura.
+
+![funções](./images/fun-1.png)
+
+Assim, é possivel calcular a área do retângulo acima com o seguinte código:
+
+    const largura = 17;
+    const altura = 8;
+    const area = largura * altura;
+
+    console.log(area);
+--------------------------------
+    Terminal:
+    `136`
+--------------------------------
+
+Agora, imagine se for preciso calcular a área de três retângulos diferentes.
+
+![funções](./images/fun-2.png)
+
+    //área do retângulo 1
+    const largura1 = 12;
+    const altura1 = 3;
+    const area1 = largura1 * altura1;
+
+    console.log(area1);
+    
+    //área do retângulo 2
+    const largura2 = 9;
+    const altura2 = 6;
+    const area2 = largura2 * altura2;
+
+    console.log(area2);
+
+    //área do retângulo 3
+    const largura3 = 14;
+    const altura3 = 7;
+    const area3 = largura3 * altura3;
+
+    console.log(area3);
+--------------------------------
+    Terminal:
+    `36`
+    `54`
+    `98`
+--------------------------------
+
+Em vez de reescrever o mesmo código ao programaar deve-se criar um código para realizar uma tarefa
+específica várias vezes.
+
+Assim, é possível agrupar um bloco de código e associá-lo a uma tarefa, e então reutilizar esse 
+bloco de código sempre que for preciso realizar a tarefa novamente.
+
+Para isso cria-se uma função, isto é, um bloco de código reutilizável que agrupa uma
+sequência de instruções para realizar uma tarefa específica.
+
+# DECLARAÇÕES DE FUNÇÕES
