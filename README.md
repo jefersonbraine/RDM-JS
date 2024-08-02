@@ -1404,3 +1404,35 @@ de um retângulo antes de serem usadas na chama de função,
 Usando parâmetros, calcularArea() pode ser reutilizado para calcular a áea de qualquer retângulo!
 
 Funções são uma ferramente poderosa na programção de computadores.
+
+# PARÂMETROS PADRÃO
+
+Parâmetro padrão é um dos recursos adicionados no ES6 e que permite que os parâmetros tenham um valor
+predeterminado no caso de nenhum argumento ser passado para a função ou se o argumento for
+`undefined` quando chamado.
+
+Observe o snippet (trecho) de código abaixo que usa um parâmetro padrão:
+
+    function saudacao (nome = 'novo usuario') {
+        console.log(`olá, ${nome}!`);
+    }
+
+    saudacao('Yoshi');
+    saudacao();
+--------------------------------
+    Terminal:
+    olá, Yoshi!
+    olá, novo usuario!
+--------------------------------
+
+ - O operadores `=` atribuiu ao parâmetro `nome` um valor padrão de `'novo usuario'`.
+
+ - Quando o código chamado `saudacao('Yoshi') o valor do argumento é passado e
+ 'Yoshi' substitui o parâmetro padrão de `'novo usuario'` para registrar  `olá, Yoshi!` no
+ console.
+
+ - Quando não é passado um argumento para `saudacao(), o valor padrão de `novo usuario` é usado e
+ `olá, novo usuario!` é registrado no console.
+
+Em situações em que um argumento não é passado para uma funçào que está esperando um argumento, 
+utilizamos um parâmetro padrão.
