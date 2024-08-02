@@ -1311,3 +1311,47 @@ Para isso cria-se uma função, isto é, um bloco de código reutilizável que a
 sequência de instruções para realizar uma tarefa específica.
 
 # DECLARAÇÕES DE FUNÇÕES
+
+Existem diferentes maneiras de criar funções em JavaScript. Uma delas é a declaração de função.
+
+Assim como uma declaração de variável, uma declaraçào de função associa uma função a um nome ou
+identificador.
+
+Conheça a anatomia de uma declaração de função:
+
+![funções](./images/fun-3.png)
+
+ 1. A palavra-chave `function`.
+ 2. Identificador seguido por parênteses
+ 3. corpo da função entre chaves
+
+Uma declaraçào de função é uma função associada
+a um identificador ou nome.
+
+# CHAMANDO UMA FUNÇÃO
+
+A declaração de funçào vincula uma funçào a um identificador.
+
+Todavia, uma declaração de função não diz que o código dentro do corpo da funçõa deve ser
+executado, apenas declara a existência da função.
+
+O código dentro do corpo de uma função é executado quando a função é chamada.
+
+O nome da função deve ser seguido por parênteses () para chamar uma função no código.
+
+![call function](./images/fun-4.png.png)
+
+A chamada de função executa os corpo da função ou todas as instruções entre as chaves 
+na declaração da função.
+
+    function horaDeAcordar() {
+        console.log(`bom dia! ☀️`);
+    }
+
+    horaDeAcordar();
+--------------------------------
+    Terminal:
+    `bom dia! ☀️`
+--------------------------------
+
+É possivel chamar a mesma função quantas vezes forem necessárias.
