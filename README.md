@@ -1355,3 +1355,52 @@ na declaração da função.
 --------------------------------
 
 É possivel chamar a mesma função quantas vezes forem necessárias.
+
+# PARAMETROS E ARGUMENTOS
+
+Algumas funções podem receber entradas e usar as entradas para realizar uma tarefa.
+
+Ao declarar uma função, é possivel especificar seus parâmetros.
+
+Os parâmetros permitem que as funções aceitem a(s) entrada(s) e executem uma tarefa usando a(s) entrada(s).
+
+Parâmetros são como espaços reservados para informações que serão passadas para a função
+quando ela for chamada.
+
+Observe como especificar parâmetros em uma declaração de função:	
+
+![alt text](./images/fun-5.png)
+
+
+ 1. Parâmetros
+ 2. Parâmertos tratados como variáveis.
+
+`calcularArea()`calcula a área de um retângulo com base em duas entradaws: `largura` e `altura`.
+
+Os parâmetros são especificados entre parênteses como `largura` e `altura`, e dentro do corpo
+da função eles agem como variáveis regulares.
+
+`largura` e `altura` atuam como substitutos de valroes que serão multiplicados juntos.
+
+Ao chamar uma função que possui parâmetros, deve-se especificar os valroes entre parênteses
+que seguem o nome da função.
+
+Os valores que são passados para a função quando ela é chamada são chamados de argumentos.
+Os argumentos podem ser passados para a função como valores ou variáveis.
+
+![alt text](./images/fun-6.png)
+
+Na chamada de função `calcularArea()` acima, o número `17` foi passado como `lagura` e `8`
+foi passado como `altura`.	
+
+Atente-se pois a ordem em que os argumentos são passados e atribuidos segue a ordem em que
+os parâmetros são declarados.
+
+![alt text](./images/fun-7.png)
+
+As variáveis retLargura e reAltura foram inicializadas com os valores de altura e largura,
+de um retângulo antes de serem usadas na chama de função,
+
+Usando parâmetros, calcularArea() pode ser reutilizado para calcular a áea de qualquer retângulo!
+
+Funções são uma ferramente poderosa na programção de computadores.
