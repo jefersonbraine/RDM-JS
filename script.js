@@ -56,3 +56,42 @@ k = k + 2;
 console.log(Math.floor(Math.random() * 200));
 
 console.log(Math.ceil(26.2));
+
+// CONDICIONAIS\
+
+let humor = 'sonolento';
+let nivelDeCansaco = 6;
+
+if (humor === 'sonolento' && nivelDeCansaco >= 8) {
+    console.log('Hora de dormir!');
+} else {
+    console.log('Dormir mais tarde!');
+}
+
+let nivelDeFome = 7;
+
+if (nivelDeFome > 7) {
+    console.log('Hora de comer!');
+} else {
+    console.log ('Comer mais tarde!');
+}
+
+let ferramenta = false;
+
+let escrita = ferramenta  || 'caneta';
+
+let ferramenta1 = 'caneta esferografica';
+
+let escrita1 = ferramenta || 'caneta tinteiro';
+
+console.log(`A ${ferramenta} é mais popular do que a caneta rollerball.`);
+
+
+
+let programando = true;
+
+if (programando) {
+    console.log('Boa! ótimo trabalho!');
+} else {
+    console.log('Ops.... algo deu errado!');
+}

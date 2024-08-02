@@ -1062,7 +1062,7 @@ e caso nenhum valor tenha sido fornecido, atribui uma string padrão.
     if (nomeUsuario){
         nomePadrao = nomeUsuario;
     } else {
-        nomePadraão = 'novo usuário';
+        nomePadrao = 'novo usuário';
     }
 
     console.log(nomePadrao);
