@@ -1436,3 +1436,55 @@ Observe o snippet (trecho) de código abaixo que usa um parâmetro padrão:
 
 Em situações em que um argumento não é passado para uma funçào que está esperando um argumento, 
 utilizamos um parâmetro padrão.
+
+# RETONAR (RETURN)
+
+O código de uma função é executado e avaliado por padrão como `undefined`quando uma função é chamada.
+
+    function areaRetangulo (largura, altura) {
+        let area = largura * altura;
+    }
+
+    console.log(areaRetangulo(17, 8));
+--------------------------------
+    Terminal:
+    undefined
+--------------------------------
+
+No exemplo, foi definida uma função para calcular `area` com parâmetros de `largura` e `altura`.
+
+Em seguida, `areaRetangulo()` foi chamada com os argumentos `17` e `8`. Porém, o resultado 
+registrado foi `undefined`.
+
+A Função não está errada. Ela funcionou bem e a área foi calculada como `136`, só que o valor 
+não foi capturado e retornado.
+
+Para retornar o valor do cálculo devemos usar a palavra-chave `return`.
+
+![alt text](./images/fun-8.png)
+
+ 1. A palavra-chave `return`.
+ 2. Valor a ser retornado.
+
+Para passar de volta informações da chamada de função, utiliza-se uma instrução de retorno.
+
+Para criar uma instrução de retorno, utiliza-se a palavra-chave `return` seguida pelo valor
+que deve ser retornado. Se o valor for omitido, ele vai retornar `undefined`.	
+
+Quando uma instrução `return` é usada no corpo de uma função, a execução é interrompida
+e o códdigo que a segue não será executado:
+
+    function areaRetangulo(largura, altura) {
+        if (largura < 0 || altura < 0) {
+            return 'Os números devem ser inteiros positivos para calcular a área!';
+        }
+        return largura * altura;
+    }
+
+Se o argumento para `largura` ou `altura`for menor que `0`, `areaRetangulo()` retornará
+a string `'Os números devem ser inteiros positivos para calcular a área!'`.
+
+A segunda instrução do retorno `largura * altura` não será executada.
+
+A palavra-chave `return`permite que funções produzam uma saída que pode, inclusive, 
+ser salva em uma variável para uso posterior.

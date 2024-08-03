@@ -121,4 +121,24 @@ if (luzSemaforo === 'vermelha') {
 } else {
     console.log('Cuidado! Semáforo com defeito');	
 }
+
+
+// FUNÇÕES
+
+
+// se o return
+function areaRetangulo (largura, altura) {
+    let area = largura * altura;
+    
+}
+
+console.log(areaRetangulo(17, 8))
+
+// com o return
+function areaRetangulo1 (largura, altura) {
+    let area1 = largura * altura;
+    return area1;
+}
+
+console.log(areaRetangulo1(17, 8))
  
