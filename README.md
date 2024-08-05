@@ -1461,7 +1461,7 @@ não foi capturado e retornado.
 
 Para retornar o valor do cálculo devemos usar a palavra-chave `return`.
 
-![alt text](./images/fun-8.png)
+![retornar valor](./images/fun-8.png)
 
  1. A palavra-chave `return`.
  2. Valor a ser retornado.
