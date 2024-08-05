@@ -1388,7 +1388,7 @@ que seguem o nome da função.
 Os valores que são passados para a função quando ela é chamada são chamados de argumentos.
 Os argumentos podem ser passados para a função como valores ou variáveis.
 
-![alt text](./images/fun-6.png)
+![argumentos](./images/fun-6.png)
 
 Na chamada de função `calcularArea()` acima, o número `17` foi passado como `lagura` e `8`
 foi passado como `altura`.	
@@ -1396,7 +1396,7 @@ foi passado como `altura`.
 Atente-se pois a ordem em que os argumentos são passados e atribuidos segue a ordem em que
 os parâmetros são declarados.
 
-![alt text](./images/fun-7.png)
+![altura e largura](./images/fun-7.png)
 
 As variáveis retLargura e reAltura foram inicializadas com os valores de altura e largura,
 de um retângulo antes de serem usadas na chama de função,
