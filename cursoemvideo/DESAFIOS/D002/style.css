@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.iniciar {
+    font-size: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
