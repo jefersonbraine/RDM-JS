@@ -233,3 +233,32 @@ Agora o objeto `Pont b` (e todos os futuros objetos Point) herda o método `r()`
 
 
 # 1.2 JavaScript do lado do cliente
+
+A função a seguir demonstra diversas dessas técnicas básicas de `pesquisa e modificaçào de documentos`.
+
+Se o documento não contém esta seção, cria uma.
+
+    function debug(msg) {
+        //localiza a seção de depuração do documento, examinando os atributos de identificação HTML
+
+        var log = document.getElementById("debuglog");
+
+        // Se não existe elemente algum com a identificação "debuglog", cria um.
+
+        if(!log) {
+            log = documento.createElement("div");   // cria um novo elemento <div>
+            log.id = "debuglog";                    // define o atribuito de identificação HTML nele
+
+            log.innerHTML = "<h1>Debug Log</h1>";   // define o conteúdo inicial
+
+            document.body.appendChild(log);         // adiciona-o no final do documento
+        }
+
+
+        // Agora, coloca a mensagem em seu próprio <pre> e a anexa no log
+
+        var pre = document.createElement("pre");    // crima uma marca <pre>
+        var text = document.createTextNode(msg);    // coloca a msg em um nó de texto
+        pre.appendChild(text);                      // adiciona o texto no <pre>
+        log.appendChild(pre);                       // adiciona o <pre> no log
+    }
