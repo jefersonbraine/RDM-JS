@@ -16,11 +16,11 @@ As variáveis são declaradas com a palavra-chave `var`.
 
 #### JavaScript aceita vários tipos de valores
 
-x = 1;                      //Números.
-x = 0.01;                   //Apenas um tipo `Number` para inteiros ou reais.
-x = "Hello world";          //Strings de texto entre aspas.
-x = 'JavaScript';           //Apóstrfos também delimitam strings.
-x = true;                   //Valores booleanos.
-x = false;                  //Valores booleanos.
-x = null;                   //Null é um valor especial que significa "nenhum valor".	
-x = undefined;              //Undefined é como `null`.git a
+    x = 1;                      //Números. 
+    x = 0.01;                   //Apenas um tipo `Number` para inteiros ou reais.
+    x = "Hello world";          //Strings de texto entre aspas.
+    x = 'JavaScript';           //Apóstrfos também delimitam strings.
+    x = true;                   //Valores booleanos.
+    x = false;                  //Valores booleanos.
+    x = null;                   //Null é um valor especial que significa "nenhum valor".	
+    x = undefined;              //Undefined é como `null`.git a
