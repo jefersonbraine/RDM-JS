@@ -116,3 +116,120 @@ Os operadores lógicos combina, ou invertem valores booleanos
 
 As linhas que terminam com ponto e vírgula são instruções. Em linhas gerais uma expressão é algo que calcula um valor, mas não faz nada: ela não altera o estado do
 programa de modo algum. As instruções, por outro lado, não tem um valor (ou não tem um valor com que nos preocupemos), mas alteram o estado.
+
+Uma função é um bloco de código JavaScript nomeado e parametrizado que você define uma vez, e então,
+pode chamar repetidamente.
+
+Alguns Exemplos simples:
+
+As funções são blocos de código JavaScript parametrizados que podemos chamar.
+
+    function plus1(x) {         // Define uma função chamada "plus`" , com o parametro "x"
+        return x + 1;           // Retorna um valor uma unidade maior do que o que foi passado
+    };                          // As funções são incluidas entre chaves
+
+    plus1(y)                    // => 4: y é 3; portando, essa chamada retorna 3+1
+    
+    var square = function(x) {  // As funções são valores e podem ser atribuidas a variáveis
+        return x * x;           // Calculca o valor da função
+    };                          // Um ponto e vírgula marca o fim da atribuição
+
+    square(plus(y))             // => 16: chama duas funções em uma única expressão
+
+
+### Quando combinamos funções com objetos, obtemos métodos:
+
+Quando funções recebem propriedades de um objeto, as chamamos de métodos.
+Todos os objetos de JavaScript tem métodos:
+
+    var a = [];                 // Cria um array vazio
+    a.push(1,2,3);              // O método push() adiciona elementos em um array
+    a.reverse();                // Outro método: inverte a ordem dos elementos
+
+Também podemos definir nossos próprios métodos, A palavra-chave `this` se refere ao objeto no qual
+o método é definido: neste caso, o array de pontos anterior.
+
+    points.dist - function() {  //Define um método para calcular a distância entre pontos
+
+        var p1 = this[0];       //Primeiro elemento do array que chamamos
+        var p2 = this[1];       //Segundo elemento do objeto "this"
+        var a = p2.x-p1.x;      //Diferença em coordenadas X
+        var b = p2.y-p1.y;      //Diferença em coordenadas Y
+        return Math.sqrt(a*a + b*b);    //Math.sqrt() calcula a raiz quadrada
+    };
+
+    points.dist()               // => 1,414: distância entre nossos 2 pontos
+
+Funções cujos corpos demonstram instruções de controle JavaScript comuns;
+
+As instruções JavaScript incluem condicionais e lações que usam a sintaxe das
+linguagens C, C++, Java e outras.
+
+    function abs(x) {           // Uma função para calcular o valor absoluto
+        if (x >= 0) {           // A instrução if...
+            return x;           // excuta este código, se a comparação for verdadeira.
+        }                       // fim da cláusula if.
+        else {                  // a cláusula opcional else executa seu código se a comparação for falsa.
+            return -x;
+        }                       //chaves são opcionais quando há 1 instrução por cláusula
+    }                           // observe as instruções return aninhadas dentro de if/else
+
+    function factorial (n) {    // Uma função para calcular o fatoriais
+        var product = 1;        // começa com o produto de 1
+        while (n > 1) {         // repete as instruções que estão em {}, enquanto a 
+                                // expressão em () for verdadeira
+            product *= n;       // Atalho para product = prduct * n;
+            n--;                // atalho para n = n - 1
+        }                       // fim do laço
+
+        return product;         // retonar o produto
+    }
+    factorial(4)                // => 24: 1*4*3*2
+
+
+    function factorial2(n) {    // outra versão, usando um laço diferente
+        var i, product = 1;     // começa com 1
+        for (i=2; i<=n; i++)    // incrementa i automaticamente, de 2 até n
+            product *= i;       //faz isso a cada vez. {} não é necessário para laços de 1 linha
+
+            
+        return product;         // retorna o fatorial
+        
+
+    }
+
+    factorial2(5)               // => 120: 1*2*3*4*5
+
+Exemplo simples que demonstra como definir uma classe JavaScript para representar pontos geométricos
+bidimensionais. Os objetos que são instâncias dessa classe têm um único método chamado r() que calcula
+a distância do ponto a partir a origem:
+
+Define uma função construtora para inicializar um novo objeto Point
+
+    function Point(x, y) {      // por convenção, as construtoras começam com letras maiúsculas
+
+        this.x = x;             // a palavra chave this é o novo objeto que está sendo inicializado
+
+        this.y = y;             // armazena os argumentos da função como propriedades do objeto
+
+    }                           // nenhum return é necessário
+
+Usa uma função construtora com a palavra-chave `new` para criar instâncias
+
+    var p = new Point(1, 1);   // O ponto geométrico (1,1)
+
+Define métodos para objetos `Point` atribuindo-os ao objeto prototype associado à função construtora.
+
+    Point.prototype.r = function() {
+        retun Math.sqrt (               //Retorna a raiz quadrada de x² + y²
+            this.x * this.x +           // este é o objeto Point no qual o método...
+            this.y * this.y             //...é chamado.
+        )
+    };
+
+Agora o objeto `Pont b` (e todos os futuros objetos Point) herda o método `r()`.
+
+    p.r()                       // => 1.41
+
+
+# 1.2 JavaScript do lado do cliente
