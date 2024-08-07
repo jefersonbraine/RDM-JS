@@ -1534,3 +1534,45 @@ Funções podem ser usadas para separar pequenos pedações de lógica ou tareda
 
 Escrever funções auxiliares pode ajudar a pegar tarefas grandes e difíceis e dividi-las em tareas menores e mais gerenciáveis.
 
+# EXPRESSÕES DE FUNÇÃO
+
+Expressão de função é mais uma forma de definir uma função.
+
+Para defirnir uma função dentro de uma expressão, pode-se usar a palavra-chave `function`.
+
+Em uma expressão de função, o nome da função geralmente é omitido. Uma função sem nome é 
+chamada de função anônima.
+
+Uma expressão de função geralmente é armazenada em uma variável para fazer referência a ela.
+
+
+![expressão de função](./images/fun-9.png)
+
+Ao declarar uma expressão de função:
+
+Declare uma variável para que o nome da variável seja o nome, ou identificador, da função.
+Desde o lançamento do ES6, é prática comum usar `const`como plavra-chave para declarar uma variável.
+
+Atribua como valor dessa variável uma função anônima criada usando a palavra-chave `function` seguida
+por um conjunto de parênteses () com parâmetros possíveis. Em seguida, um conjunto de chaves que 
+contém o corpo da função.
+
+    nomeDaVariavel(argumento1, argumento2)
+
+# FUNÇÕES DE SETE (arrow functions)
+
+A versão ES6 introduziu a sintaxe da `Arrow Function`, ou função de sete, que nada mais é do que uma maneira
+mais curta de se escrever funções usando uma anotação especial de `seta grande` `() => `.
+
+As arrow functions eliminan a necessidade de digitar a palavra-chave `function` toda vez que for
+preciso cirar uma função. Em vez disso, primeiro inclui-se os parâmetros dentro de `( )` e, em seguida,
+adicion-ase uma seta `=>` que aponta para o corpo da função circundando `{}` assim:
+
+    const areaRetangulo = (largura, altura) => {
+        lete area = largura * altura;
+        return area;
+    };
+
+É importante familiarizar-se com as várias maneiras de escrever funções, pois cada uma delas
+está presente em outro código JavaScript.
+
