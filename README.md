@@ -1621,3 +1621,155 @@ Sendo que as mudanças foram:
 
  - A palavra-chave `return` foi removida, pois a 
  função consiste em um bloco de linha única.
+
+
+ # O QUE SÃO ARRAYS?
+
+ Arrays, ou matrizes, são listas que armazenam dados em JavaScript.
+
+ Os arrays podem armazenar qualquer tipo de dados (incluindo strings, números e booleanos).
+
+ Como as listas, os arrays são ordenados, o que signifca que cada item tem uma posição numerada.
+
+ Organizar e armazenar dados é um conceito básico de programação.
+
+ Uma maneira de organizar os dados na vida real é fazendo listas. Por exemplo:
+
+Resoluções Ano Novo:
+ 1. Praticar programação com o Motiro
+ 2. Evoluir na língua inglesa
+ 3. Obter o trabalho dos sonhos
+
+Agora, essa mesma lista escrita em JavaScript,
+como um array.
+
+    lete resolucoesAnoNovo = ['Praticar programação com o Motiro', 
+    'Evoluir na lingua inglesa', 'Obter o trabalho dos sonhos'];
+
+    console.log(resolucoesAnoNovo);
+-------------------------------------
+
+    Terminal: 
+
+    ['Praticar programação com o Motiro', '
+    Evoluir na lingua inglesa', 'Obter o trabalho dos sonhos']
+
+------------------------------
+
+# CRIANDO UM ARRAY
+
+Uma forma de criar uma array é usar um *literal de array*, que cria um array
+envolvendo os itens entre colchetes `[]`.
+
+Como arrays podem armazenar qualquer tipo de dados, um array pode conter todos
+os mesmo tipos de dados ou tipos diferentes de dados.
+
+
+![criando um array](./images/arr-1.png)
+
+ - O array é representado por colchetes `[]` e o conteúdo dentro.
+
+ - Cada item de conteúdo dentro de um array é chamado de elemento.
+
+ - Existem três elementos diferentes dentro da matriz.
+
+ - Cada elementro dentro da matriz é um tipo de dado diferente.
+
+Um array também pode ser salvo em uma variável.
+
+    cosnt passatempos = ['Correr no parque', 'Jogar futebol', 'Estudar'];	
+
+
+# ACESSANDO ELEMENTOS
+
+Cada elemento em um array possui uma posição numerada conhecida como index (indice).
+
+É possivel acessar itens individuais usando seu index, que é o mesmo que fazer 
+referência a um item em uma lista com base na posição do item.
+
+Os arrays em JavaScript são indexados por zero, o que signifca que as posições	
+começam a constar a partir de `0` em vez de `1`.
+
+Portanto, o primeiro item em um array está na posição `0`. Vamos ver como podemos
+acessar um elemento em um array:
+
+![acessando elementos](./images/arr-2.png)
+
+ -`cidades`é um array com tres elementos.
+
+ - foi usada a notação de colchetes `[]`, com o index após
+ o nome do array para acessar o elemento.
+
+ -`cidades[0]` acessa o elemento no `index 0` do array `cidades`,
+ ou seja, `cidades[0]` acessar o espaço na memória que contém
+ a string `'itu'`.
+
+Também é possivel acessar caracteres individuais em uma string 
+usando a notação de colchetes e o index. Por exemplo:
+
+    const boasVindas = 'Boas-vindas ao README!';
+    console.log(boasVindas[8]);
+--------------------------------
+    Terminal:
+    `d`
+--------------------------------
+
+`d` foi exibino do console. pois é o caractere que está no index `8`.
+
+# ATUALIZAÇÃO DE ELEMENTOS
+
+Depois de ter acesso a um elemento de uma array, é possivel atualizar seu valor.
+
+    const carrosEletricos = ['BMW', 'Mercedes', 'Audi'];
+
+    carrosEletricos[2] = 'Volkswagen';
+    console.log(carrosEletricos);
+--------------------------------
+    Terminal:
+    [`BMW`, `Mercedes`, `Volkswagen`]
+--------------------------------
+
+No exemplo, o array `carrosEletricos` continha o nome
+de três marcas de carros.
+
+No entando decidiu-se substituir no array o elemento `Audi` por `Volkswagen`.
+
+A linha `carrosEletricos[2] = 'Volkswagen';` diz ao programa para alterar o item no index 2
+do array `carrosEletricos`para ser `'Volkswagen'`. em vez do que já está lá.
+
+# ARRAYS COM LET E CONST
+
+Sabe-se que variaveis declaradas com `let` podem ser reatribuidas e que variáveis
+declaradas com o `const` não podem ser reatribuidas.
+
+No entanto, os elementos em um array declarado com `const` permanecem mutáveis.
+
+O que signifca que é possivel alterar o conteúdo de um array `const`, mas não reatribuir
+um novo `array`ou um valor diferente.
+
+# A PROPRIEDADE .length
+
+Uma das propriedades integradas de um array é `.length` que retorna o número de
+itens presentes no array.
+
+A forma de acessar a propriedade `.length` é exatamente igual a forma usar 
+para acessar em strings:
+
+    const objetivos2024 = ['Aprender uma nova lingua', 'ler 30 livros', 'emagrecer', 'viajar para o exterior'];
+
+    console.log(objetivos2024.length);
+--------------------------------
+    Terminal:
+    `4`
+--------------------------------
+
+ - A propriedade `.length` acessou o array `objetivos2024`.
+
+ - Em seguida, registrou o `.length` de `objetivos2024` no console.
+
+ - uma vez que `objetivos2024` tem quatro elementos, o número `4` foi registrado no
+ console.
+
+Para saber quantos elementos existem em um array, pode-se acessar a propriedade `.length`.
+
+# O MÉTODO .push()
