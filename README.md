@@ -1,12 +1,12 @@
 # Oque é Javascript?
 
 JavaScript é uma linguagem de programação que potencializa o comportamento dinâmico na maioria dos sites, permitindo
-implemntar itens complexos em página web.
+implementar itens complexos em páginas web.
 
 Está presente sempre que uma página da web faz mais do que simplesmente mostrar a você informação estática, mostrando
 conteúdo que se atualiza em um intervalo de tempo, mapas interativos ou gráficos 2D/3D animados, etc.
 
-Cria conteúdo que se atualiza dinamicamente, contra múltimidias, imagens animadas, e tudo o mais que há de interessante.
+Cria conteúdo que se atualiza dinamicamente, comoa múltimidias, imagens animadas, e tudo o mais que há de interessante.
 OK, não tudo, mas é maravilhoso o que se pode efetuar com algumas linhas de Código JavaScript.
 
 Junto com HTML e CSS, é uma tecnologia central que faz a web funcionar.
@@ -75,7 +75,7 @@ Os tipos de dados são as classificações dos diferentes tipos de dados usados 
 programação. Em JavaScript, o mais recente padrão ECMAScript 6 define sete tipos de dados
 fundamentais: **number, string, boolean, null, undefined, symbol e object.**
 
-Seis tipos de dados são considerados tipos de dados primitivos e sào os mais básicos da
+Seis tipos de dados são considerados tipos de dados primitivos e são os mais básicos da
 linguagem:
 
  - Number(Número): Qualquer número, incluindo números
@@ -107,7 +107,7 @@ linguagem:
  - Undefined (Indefinido): este tipo de dados é denotado pela
  palavra-chave 'undefined' (sem aspas). Também representa
  a ausencia de um valor, embora tenha um uso diferente de 'null'.
- Variáveis que são declaradas, mas não são inicializadas com um valor,
+ Variáveis que são declaradas, mas que não são inicializadas com um valor,
  terão o valor 'undefined'.
 
         `var = programar;
@@ -193,7 +193,7 @@ a string da direita à string da esquerda.
 
 O processo de anexar uma string a outra é
 chamado de concatenação, em inglês: 
-String Concatenation.
+**String Concatenation**.
 
     `console.log('Eu estou aprendendo ' + 'JS do inicio ao fim');`
 --------------------------------
@@ -246,11 +246,11 @@ e o nome da propriedade:
     `10`
 --------------------------------
 
-No exemplo acima, o valor salvo da propriedade `length` fé recuperado da
+No exemplo acima, o valor salvo da propriedade `length` é recuperado da
 instância da string `JavaScript`. O número 10 é impresso no console,
-pos JavaScript contém 10 caracteres.
+pois JavaScript contém 10 caracteres.
 
-O `.` é outro operador, chamado de operador de ponto.
+O `.` é outro operador, chamado de **operador de ponto**.
 
 # MÉTODOS
 
@@ -264,7 +264,7 @@ devemos:
  - informar o nome do método
  - abrir e fechar os parenteses.
 
- Ex.: ('stringExemplo'.NomeMetodo());
+        Ex.: ('stringExemplo'.NomeMetodo());
 
  Ao usar console.log(), por exemplo,
  chamamos o método .log() no objeto 
@@ -312,8 +312,8 @@ Veja o exemplo abaixo onde é chamado o método
     `0.123456789`
 --------------------------------
 
-Este método retorna um número aleatório 
-entre 0 (inclusivo) e 1 (exclusivo).
+Este método retorna um número **aleatório** 
+**entre 0 (inclusivo) e 1 (exclusivo)**.
 
 Para gera um número aleatório entre 0 e 50,
 multiplique por 50:
@@ -324,9 +324,9 @@ multiplique por 50:
     `45.123456789`
 --------------------------------
 
-Para que o resultado seja um número inteiro
+Para que o resultado seja um **número inteiro**
 e não um decimal, pode-se usar outro método
-chamado Math.floor(), que arredonda para
+chamado **Math.floor(), que arredonda** para
 baixo para o número inteiro mais proximo:
 
     `console.log(Math.floor(Math.random() * 50));`
@@ -376,9 +376,9 @@ O método `Math.ceil()` retorna o menor número inteiro maior ou igual a "x".
 Variáveis são objetos que rotulam e armazenam dados
 na memória do computador.
 
-Pense em variáveis como pequenas caixas que guardam 
-informações. Tais informações podem ser **o nome de
-uma pessoa usuária, número de telefone ou mesmo uma mensagem de saudação**,
+**Pense em variáveis como pequenas caixas que guardam** 
+**informações**. Tais informações podem ser **o nome de**
+**uma pessoa usuária, número de telefone ou mesmo uma mensagem de saudação**,
 ou seja, qualquer tipo de dado seja ele **string, número ou booleano**.
 
 ![variavel](./images/var-1.png)
@@ -410,14 +410,14 @@ deve usar `var`.
     `Maiara`
 --------------------------------
 
-`var`, abreviação de variável, é uma palavra-chave JavaScrpt que declara (cria) uma nova variável;
+`var`, abreviação de `variável`, é uma palavra-chave JavaScrpt que declara (cria) uma nova variável;
 
 `pessoaUsuaria`, é o nome da variável. A escrita dessa maneira, onde agrupa-se as palavras em
 uma e a primeira palavra é minuscula, e cada palavra que segue tem a primeira letra maiuscula
-é uma convenção padrõa em JavaScript chamada camel casing (caixa de camelo). 
-Outro exemplo: `camelCaseExcemplo;`
+é uma convenção padrão em JavaScript chamada camel casing (caixa de camelo). 
+Outro exemplo: `camelCaseExemplo;`
 
-`=` é o operador de atribuição que atribui o valor `('Maiara')` a variável `(pessoaUsuaria);
+`=` é o operador de atribuição que atribui(recebe) o valor `('Maiara')` a variável `(pessoaUsuaria);
 
 `'Maiara'` é o valor atribuido `(=)` à variável `pessoaUsuaria`. foi inicializada com o 
 o valor de `'Maiara'`.
@@ -440,7 +440,7 @@ Existem regas para nomear variáveis:
 # CRIANDO UMA VARIÁVEL: let
 
 A palavra-chave `let` foi introduzida em 2015 na versão ECMAScript 6 (ES6) e sinaliza
-que a variável pode ser reatribuida com um valor diferente. Por exemplo:
+que a **variável pode ser reatribuida com um valor diferente**. Por exemplo:
 
     `let almocoSabado = 'Feijoada';
     console.log(almocoSabado);
@@ -455,10 +455,10 @@ que a variável pode ser reatribuida com um valor diferente. Por exemplo:
 
 Outro ponto que deve-se observar ao utilizar `let` (e até `var`) é que é possivel declarar
 uma variável sem necessariamente atribuir a ela um valor. Dessa forma, a variável será
-iniciliazada como um valor `undefined`. Exemplo:
+inicializada como um valor `undefined`. Exemplo:
 
     `let diaDaSemana;
-    console.log(daDaSemana);
+    console.log(diaDaSemana);
 
     diaDaSemana = 'Sabado';
     console.log(diaDaSemana);`
@@ -470,7 +470,7 @@ iniciliazada como um valor `undefined`. Exemplo:
 
 No exemplo, inicialmente não foi atribuido um valor à variável `diaDaSemana` e ela
 automaticamente inicializou com um valor `undefined`. Em seguida, atribuiu-se o valor
-`'Sábado'` à variável.
+`'Sábado'` a variável.
 
 # CRIANDO UMA VARIÁVEL: const
 
@@ -502,7 +502,7 @@ Ao tentar reatribuir uma variável `const`, obtem-se um `TypeError`.
     `TypeError: Assignment to constant variable.`
 --------------------------------
 
-Além disso, as variáveis constante devem receber um valor quando são declaradas.
+Além disso, as variáveis constantes devem receber um valor quando são declaradas.
 Ao tentar declarar uma variável `const` sem um valor, obtem-se um `SyntaxError`.
 
     const quantidadeDias;
@@ -512,14 +512,14 @@ Ao tentar declarar uma variável `const` sem um valor, obtem-se um `SyntaxError`
     `ReferenceError: quantidadeDias is not defined`
 --------------------------------
 
-Para decidir-se entre qual palavra-chave usar, `let` ou `const`, pense se
-será necessário reatribuir um valor à variável no futuro. Se for preciso
+Para decidir-se entre qual palavra-chave usar, `let` ou `const`, **pense se**
+**será necessário reatribuir um valor à variável no futuro**. Se for preciso
 reatribuir a variável `let`, caso contrário, use `const`.
 
 # OPERADORES DE ATRIBUIÇÃO  
 
 Observe como é possível usar variáveis e operadores matemáticos para
-calcular novos valores e atribuí0los a uma variável:
+calcular novos valores e atribuílos a uma variável:
 
     let ano = 2021;
     ano = ano + 1;
@@ -531,7 +531,7 @@ calcular novos valores e atribuí0los a uma variável:
 --------------------------------
 
 No exemplo, foi declara a variável `ano` com o número 2021, atribuída a ela.
-Na linha seguinte `ano = ano + 1`, aumentar o valor de ano para 2022.
+Na linha seguinte `ano = ano + 1`, aumentando o valor de ano para 2022.
 
 Outra forma de reatribuir `ano`é utilizar operadores de atribuição matemática
 embutidos. Pode-se reescrever o código acima da seguinte maneira:
@@ -607,7 +607,7 @@ Já o operador de decremento diminui o valor da variável em 1:
 --------------------------------
 
 Assim como os demais operadores de atribuiçào matemáticos `(+=, -=, *= e /=)`,
-o valor o valor da variável é atualizado e atribuido como o novo valor dessa variável.
+o **valor da variável é atualizado e atribuido como o novo valor dessa variável**.
 
 # CONCATENAR STRINGS E VARIÁVEIS
 
@@ -635,7 +635,7 @@ Por fim, o valor final da concatenaçào foi registrado no console.
 É possivel inserir ou interpolar variáveis em strings usando literais de modelo
 (template literals).
 
-Obsever no exemplo abaixo como um literal de modelo é usado para registrar strings juntas:
+Observe no exemplo abaixo como um literal de modelo é usado para registrar strings juntas:
 
     let appFavorito = 'Insta';
 
@@ -645,12 +645,12 @@ Obsever no exemplo abaixo como um literal de modelo é usado para registrar stri
     `Uso muito o Insta!`
 --------------------------------
 
- - Um literal de modelo é envolvido por crases ``.
+ - Um literal de modelo é envolvido por crases ` `` `.
 
  - Dentro do literal do modelo, há um espaço reservado
- ${appFavorito}. O valor de `appFavorito` é inserido no literal do modelo.
+ `${appFavorito}`. O valor de `appFavorito` é inserido no literal do modelo.
 
- O maior benefício de usar literais de modelo é a legibilidade do código, facilitando
+ **O maior benefício de usar literais de modelo é a legibilidade do código**, facilitando
  identificar qual será a nova string, Além disso, não é necessário preocupar-se com a combinação
  de aspas duplas ou aspas simples.
 
@@ -665,7 +665,7 @@ Obsever no exemplo abaixo como um literal de modelo é usado para registrar stri
  utilize o operador **typeof**
 
     const pessoaUsuaria = 'Jamile';
-    console.log(typeof pessoaUsuaria);
+    console.log(typeof.pessoaUsuaria);
 --------------------------------
     Terminal:
     `string`
@@ -679,7 +679,7 @@ Obsever no exemplo abaixo como um literal de modelo é usado para registrar stri
 --------------------------------
 
     const programando = true;
-    console.log(typeof.programando);
+    console.log(typeof programando);
 --------------------------------
     Terminal:
     `boolean`
@@ -710,15 +710,15 @@ com base na condição ou nas condições, caso seja mais de uma.
 
 Veja a sintade básica de `if...else` no pseudocódigo:
 
-`if (condicao) {
-    codigo para executar caso a condição seja verdadeira;
-} else {
-    senão, executar este código
-}`
+    `if (condicao) {
+        codigo para executar caso a condição seja verdadeira;
+    } else {
+        senão, executar este código
+    }`
 
 ### Aqui nós temos:
 
- 1. A palavra reservada `if`seguida de um de parêntesese.\
+ 1. A palavra reservada `if`seguida de uma condiçãp em parênteseses.
 
  2. Um teste condicional, localizado dentro dos parênteses.
  (normalmente "este valor é maior que esse", ou "este valor existe"). Esta condição pode fazer uso
@@ -743,15 +743,15 @@ Para entender bem a sintaxe, vamos considerar um exemplo real. Imagine um filho 
 do Pai ou da Mãe. Os pais podem falar: "Ei querido, se você me ajudar a ir fazer as compras, eu te dou uma grana extra
 para que você possa comprar aquele brinquedo que você quer". Em JavaScript, podemos representar isso como:
 
-`var comprasFeitas = false;
+    `var comprasFeitas = false;
 
-if (comprasFeitas === true) {
-    var granaFilho = 100;
-} else {
-    var granaFilho = 50;
-}`
+    if (comprasFeitas === true) {
+        var granaFilho = 100;
+    } else {
+        var granaFilho = 50;
+    }`
 
-Esse código como mostrado irá sempre resultar na variável `comprasFeitas`retornando `false`, endo um
+Esse código como mostrado irá sempre resultar na variável `comprasFeitas`retornando `false`, sendo um
 desapontamento para nossas nossas pobres crianças, Cabe a nós fornecer um mecanismo para o pai
 definir a variável `comprasFeitas`como `true` se o filho fez as comrpas.
 
@@ -765,7 +765,7 @@ o seguinte exemplo mais envolvido, que pode fazer parte de um aplicativo simples
 
 `HTML
 
-<laber for="wheater">Select the weather type today</label>
+<label for="wheater">Select the weather type today</label>
 <select id="wheater">
     <option value="">--Make a choice--</option>
     <option value="sunny">Sunny</option>
@@ -811,9 +811,9 @@ para que, quando o valor for alterado, a função `setWeather` seja executada.
 
 3. Quando esta função é executada, primeiro definimos uma variável chamada `choice`,
 para o valor atual selecionado no elemento `select`. Em seguida, usamos uma
-instruçào condicional para mostrar um texto diferentee dentro do parágrafo,
-dependendo de qual é o valor de `choice`. Oberseve como todas as condições
-são testadas nos blocos `else if() {...}`, com exnceção do primeiro, que 
+instruçào condicional para mostrar um texto diferente dentro do parágrafo,
+dependendo de qual é o valor de `choice`. Observe como todas as condições
+são testadas nos blocos `else if() {...}`, com exceção do primeiro, que 
 é testado em um bloco  `if() {...}`.
 
 4. A última escolha, dentro do bloco `else{...}`, é basicamente uma opções de "último recurso" --- o 
@@ -859,12 +859,12 @@ se a condição for avaliada como `false`, o código dentro das chaves {} não �
 
 # DECLARAÇÃO If ... Else
 
-Sabe-se que uma instrução `if`verificar uma condiçào e decide se um bloco de código deve
+Sabe-se que uma instrução `if` permite verificar uma condiçào e decide se um bloco de código deve
 ser executado quando a condição é avaliada como `true`.
 
 Em alguns casos, pode ser que queiramos que um outro bloco de código seja executado, caso a condição seja avaliada como `false`.
 
-Para adicionar um comportamente padrão à instrução `if`, adicione uma instrução `else`para executar um bloco de código quando a
+Para adicionar um comportamento padrão à instrução `if`, adicione uma instrução `else`para executar um bloco de código quando a
 condição for avaliada como `false`.
 
 observe o exemplo:
@@ -902,7 +902,8 @@ Alguns operadores de comparaçào e suas sintaxes são:
 
  - menor que: <
  - maior que: >
- - igual a: ===
+ - igual a: ==
+ - Exatamente igual a: ===
  - diferente de: !=
  - maior ou igual a: >=
  - menor ou igual a: <=
@@ -918,12 +919,12 @@ O exemplo acima teria como pergunta: `100` é maior que `50`? Sim, portando `100
 
 É possível usar operadores de comparação em diferentes tipos de dados, comos trings:
 
-    'suco' === 'refrigerante' // false
+    'suco' == 'refrigerante' // false
 
-O operadore de identidade `(===)` verifica se a string `'suco'`é igual à string `'refrigerante'`.
+O operadores de identidade `(==)` verifica se a string `'suco'`é igual à string `'refrigerante'`.
 Como as duas strings não são iguais, a instruçào de comparação avalia como `false`.
 
-Todas as declarações de comparaçào avaliam `true` ou `false` e são compostas de:
+Todas as declarações de comparação avaliam `true` ou `false` e são compostas de:
 
  - Dois valores que serão comparados.
  - Um operador que separa os valores e os compara (>, <, <=, >=, ===, e !==).
@@ -933,7 +934,7 @@ Todas as declarações de comparaçào avaliam `true` ou `false` e são composta
 Em JavaScript, os operadores lógicos adicionam uma lógica mais sofisticada às condicionais,
 isto é, quando utilizamos valores booleanos, `true` ou `false`.
 
-Há três tips de operadores lógicos:
+Há três tipos de operadores lógicos:
 
  - Operador **e** `(&&)`: Retorna `true`se ambas as condições forem avaliadas como `true`.
  - Operador **ou** `(||)`: Retorna `true`se pelo menos uma das condições forem avaliadas como `true`.
@@ -947,7 +948,7 @@ Para verificar se dois elementos são `true`, utiliza-se o operador `&&`:
         console.log('Use apenas um suéter.');
     }
 
-O operadore `&&` verifica ambas as condições que devem ser avaliadas como `true` para que toda a condiçào seja avaliada como `true` e,
+O operador `&&` verifica ambas as condições que devem ser avaliadas como `true` para que toda a condiçào seja avaliada como `true` e,
 assim, executar o bloco de código `if`.
 
 Caso uma das condições seja avaliada como `false`, a condição `&&` também será avaliada como `false`e o bloco de código `else` será executado.
@@ -960,7 +961,7 @@ Se apenas uma das duas condições precisar ser avaliada como `true`, utilize o 
         console.log ('Boas-vindas, ' + nome + '!');
     }
 
-Ao usar o operador ` || `, apenas uma das condições deve ser avaliada como `true`para que a instrução geral também seja avaliada como `true`.
+Ao usar o operador ` || `, apenas uma das condições deve ser avaliada como `true` para que a instrução geral também seja avaliada como `true`.
 
 No exemplo, se `nome === 'Ana'` ou `nome === 'ana'` for avaliada como true, a condição `if` será avaliada como `true` e seu bloco de código será executado.
 
@@ -970,7 +971,7 @@ Se a primeira condição em uma instrução `||` for avaliada como `true`, a seg
 O bloco de código na instrução `else`será executado somente se ambas as comparações em `if`forem avaliadas como `false`.
 
 
-O operador not `(!)` inverte ou enga um valor booleano:
+O operador not `(!)` inverte ou nega um valor booleano:
 
     let programando = false;
     console.log(!programando);
@@ -1049,9 +1050,9 @@ A condição é avaliado como `false`porque o valor de pessoasNaSala é `0`. Com
 # ATRIBUIÇÃO DE VERDADE OU FALSO
 
 Numa situação, por exemplo, em que seja preciso saudar uma pessoa usuária de forma
-personalziada utiliando seu nome, mas com a possibilidade dela ainda não ter uma conta
+personalziada utilizando seu nome, mas com a possibilidade dela ainda não ter uma conta
 tornando o `nomeUsuario` uma variável falsa, avaliações verdaderias e falsa (truthy and falsy)
-simplificaam bastante as coisas.
+simplificam bastante as coisas.
 
 Obsever no código abaixo como seria na prática. Ele verifica se `nomeUsuario` foi definido,
 e caso nenhum valor tenha sido fornecido, atribui uma string padrão.
@@ -1085,7 +1086,7 @@ e caso nenhum valor tenha sido fornecido, atribui uma string padrão.
 A instrução `||` verificou a condição do lado esquerdo primeiro. Como o valor de `nomeUsuario`(`if`) foi atribuido como `false` (`''`), a instrução
 `else`com `'novo usuário'` foi avaliada como `true`e executada.
 
-Este conceito também é conhecido como avaliaçãod e curto-circuito. (Short Circuit Evaluation)
+Este conceito também é conhecido como avaliação de curto-circuito. (Short Circuit Evaluation)
 
 # OPERADOR TERNÁRIO
 
@@ -1124,7 +1125,7 @@ código de forma simplificada mantendo a mesma funcionalidade. Observe:
  - Se a condição for avaliada como `true`, a primeira expressão será executada.
 
 Assim como as declarações `if ... else` , os operadores ternários são usados em condições
-para avaliar valroes como `true` ou `false`.
+para avaliar valores como `true` ou `false`.
 
 # DECLARAÇÕES Else If
 
@@ -1155,7 +1156,7 @@ A declaração `else if` também exige uma condição. Veja a sintaxe:
 
 As declarações else if permite vários resultados possíveis.
 
-InstruçÕes `if/ else if/` else são lidas de cuma para baixo, então a primeira condição avaliada como true de cima para baixo
+Instruções `if/ else if/` else são lidas de cima para baixo, então a primeira condição avaliada como true de cima para baixo
 é o bloco que será executado.
 
 No exemplo, uma vez que clima === 'Chuvoso'
@@ -1228,21 +1229,21 @@ A palavra-chave `switch` inicia a instrução e é seguida por `(...)`, que cont
 
 Dentro do bloco `{...}`, existem vários `cases`.
 
-A palavra-chave `case`verifica se a expressão corresponde ao valor especificado que vem depois dela.
+A palavra-chave `case` verifica se a expressão corresponde ao valor especificado que vem depois dela.
 
  O valor após o primeiro `case`é `'Primavera'`.
- Se o valor de estacao fosse iual a `'Primavera'`, o console.log() do `case`seria executado.
+ Se o valor de estacao fosse igual a `'Primavera'`, o console.log() do `case` seria executado.
 
  O valor de estacao é `'Verao'`, portando, o terceiro `case` foi executado e `É verao! Está quente e ensolarado` foi exibido no console.
 
 A palavra-chave `break` diz ao computador para sair do bloco e não executar mais nenhum código ou verificar qualquer outro `case`dentro do bloco de código.
 
-Se palavras-chave `break`, o primeiro `case`correspondente será executado, mas o mesmo acontecerá com todas os `cases`subsequentes,
-indeopendentemente de haver correspondência ou não - incluindo o `default`.
+Sem a palavra-chave `break`, o primeiro `case` correspondente será executado, mas o mesmo acontecerá com todas os `cases`subsequentes,
+independentemente de haver correspondência ou não - incluindo o `default`.
 
 Esse comportamento é diferente de instruções `if ... else` em condicionais que executam apenas um bloco de código.
 
-Ai final de cada declaração `switch`, há uma declaração `default`. Se nenhum dos `cases`for verdadeiro`, o código da instrução `default` será executado.
+Ao final de cada declaração `switch`, há uma declaração `default`. Se nenhum dos `cases`for verdadeiro`, o código da instrução `default` será executado.
 
 
 # O QUE SÃO FUNÇOES?	
@@ -1301,7 +1302,7 @@ Agora, imagine se for preciso calcular a área de três retângulos diferentes.
     `98`
 --------------------------------
 
-Em vez de reescrever o mesmo código ao programaar deve-se criar um código para realizar uma tarefa
+Em vez de reescrever o mesmo código ao programar deve-se criar um código para realizar uma tarefa
 específica várias vezes.
 
 Assim, é possível agrupar um bloco de código e associá-lo a uma tarefa, e então reutilizar esse 
@@ -1330,9 +1331,9 @@ a um identificador ou nome.
 
 # CHAMANDO UMA FUNÇÃO
 
-A declaração de funçào vincula uma funçào a um identificador.
+A declaração de função vincula uma função a um identificador.
 
-Todavia, uma declaração de função não diz que o código dentro do corpo da funçõa deve ser
+Todavia, uma declaração de função não diz que o código dentro do corpo da função deve ser
 executado, apenas declara a existência da função.
 
 O código dentro do corpo de uma função é executado quando a função é chamada.
@@ -1341,7 +1342,7 @@ O nome da função deve ser seguido por parênteses () para chamar uma função 
 
 ![call function](./images/fun-4.png.png)
 
-A chamada de função executa os corpo da função ou todas as instruções entre as chaves 
+A chamada de função executa o corpo da função ou todas as instruções entre as chaves 
 na declaração da função.
 
     function horaDeAcordar() {
@@ -1373,16 +1374,16 @@ Observe como especificar parâmetros em uma declaração de função:
 
 
  1. Parâmetros
- 2. Parâmertos tratados como variáveis.
+ 2. Parâmetros tratados como variáveis.
 
-`calcularArea()`calcula a área de um retângulo com base em duas entradaws: `largura` e `altura`.
+`calcularArea()`calcula a área de um retângulo com base em duas entradas: `largura` e `altura`.
 
 Os parâmetros são especificados entre parênteses como `largura` e `altura`, e dentro do corpo
 da função eles agem como variáveis regulares.
 
-`largura` e `altura` atuam como substitutos de valroes que serão multiplicados juntos.
+`largura` e `altura` atuam como substitutos de valores que serão multiplicados juntos.
 
-Ao chamar uma função que possui parâmetros, deve-se especificar os valroes entre parênteses
+Ao chamar uma função que possui parâmetros, deve-se especificar os valores entre parênteses
 que seguem o nome da função.
 
 Os valores que são passados para a função quando ela é chamada são chamados de argumentos.
@@ -1428,18 +1429,18 @@ Observe o snippet (trecho) de código abaixo que usa um parâmetro padrão:
  - O operadores `=` atribuiu ao parâmetro `nome` um valor padrão de `'novo usuario'`.
 
  - Quando o código chamado `saudacao('Yoshi') o valor do argumento é passado e
- 'Yoshi' substitui o parâmetro padrão de `'novo usuario'` para registrar  `olá, Yoshi!` no
+ 'Yoshi' substitui o parâmetro padrão de `'novo usuario'` para registrar `olá, Yoshi!` no
  console.
 
  - Quando não é passado um argumento para `saudacao(), o valor padrão de `novo usuario` é usado e
  `olá, novo usuario!` é registrado no console.
 
-Em situações em que um argumento não é passado para uma funçào que está esperando um argumento, 
+Em situações em que um argumento não é passado para uma função que está esperando um argumento, 
 utilizamos um parâmetro padrão.
 
 # RETONAR (RETURN)
 
-O código de uma função é executado e avaliado por padrão como `undefined`quando uma função é chamada.
+O código de uma função é executado e avaliado por padrão como ` undefined`quando uma função é chamada.
 
     function areaRetangulo (largura, altura) {
         let area = largura * altura;
