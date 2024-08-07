@@ -142,3 +142,74 @@ function areaRetangulo1 (largura, altura) {
 
 console.log(areaRetangulo1(17, 8))
  
+
+function agradecimento() {
+    console.log('Obrigado por me ajudar a aprender JavaScript!');
+}
+
+agradecimento();
+
+function listaComprasPapelaria (item1 = 'cadernos', item2 = 'livros', item3 = 'mochila') {
+    console.log(`lembrar de comprar ${item1}, ${item2} e ${item3}.`)
+}
+
+listaComprasPapelaria ('caneta', 'lapis', 'borracha')
+
+function saudacao(nome = 'estudante') {
+    console.log(`Boas-vindas, ${nome}!`)
+
+}
+
+saudacao();
+saudacao('Camila')
+
+function contSemente(linhas, colunas) {
+    return linhas * colunas;
+}
+
+function custoSemente(linhas, colunas) {
+    return contaSemente(linhas, colunas) * 0.80;
+}
+
+const custoTotal = contaSemente(11, 23);
+
+function areaDaMesa(largura, comprimento) {
+    if (largura <= 100 && comprimento <= 200) {
+        return 'A mesa cabe na sala!';	
+    } else {
+        return 'A mesa não cabe na sala!';
+    }
+};
+
+const espacoNaSala = areaDaMesa(90, 190);
+
+
+// refatorado para ter um corpo concisco e o if/else em operador ternário
+
+const areaDaMesa = (largura, comprimento) => {
+    largura <= 100 && comprimento <= 200 ? console.log('A mesa cabe na sala!') : console.log('A mesa não cabe na sala!');
+};
+
+
+// USAR ESSE
+const areaDaMesa = (largura, comprimento) => 
+    largura <= 100 && comprimento <= 200 ? 'A mesa cabe na sala!' : 'A mesa é maior que o espaço disponivel!';
+;
+
+const espacoNaSala1 = areaDaMesa(90, 210);
+
+console.log(espacoNaSala1)
+
+const regarPlaneta = function(dia) {
+    if (dia === 'Sábado') {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+
+//REFATORADO OARA CONSISO E TERNÁRIO
+
+const regarPlanta = dia => dia === 'Sabado' ? true : false;
+console.log(regarPlanta('sabado'));

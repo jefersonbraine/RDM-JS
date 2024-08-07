@@ -1559,7 +1559,7 @@ contém o corpo da função.
 
     nomeDaVariavel(argumento1, argumento2)
 
-# FUNÇÕES DE SETE (arrow functions)
+# FUNÇÕES DE SETA (arrow functions)
 
 A versão ES6 introduziu a sintaxe da `Arrow Function`, ou função de sete, que nada mais é do que uma maneira
 mais curta de se escrever funções usando uma anotação especial de `seta grande` `() => `.
@@ -1585,7 +1585,7 @@ A forma mais condensada da funçõa é conhecida como `corpo conciso`.
  1. Funções que usam apenas um único
  parâmerto não precisam que esse
  parâmetro seja colocado entre parênteses.
- No entanto, se uma função tiver ero ou
+ No entanto, se uma função tiver zero ou
  vários parâmetros, os parênteses são 
  necessários.
 
