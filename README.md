@@ -1773,3 +1773,150 @@ para acessar em strings:
 Para saber quantos elementos existem em um array, pode-se acessar a propriedade `.length`.
 
 # O MÉTODO .push()
+
+Em JavaScript existem alguns métodos integrados que facilitam o trabalho com arrays.
+
+Esses métodos são chamados especificamente em arrays para tornar as tarefas comuns, como
+adicionar e remover elementos, mais diretas.
+
+Um método `.push()` permite adicionar itens ao final de um array:
+
+    const itens = ['item 0', 'item 1', 'item 2'];
+    itens.push('item 3', 'item 4');
+    console.log(itens);
+--------------------------------
+    Terminal:
+    [`item 0`, `item 1`, `item 2`, `item 3`, `item 4`]
+--------------------------------
+
+ - O método `.push()` foi chamada como uma função porque `.push()`é uma função que o JavaScript permite usar diretamente
+ em um array.
+
+ - `.push` pode receber um único argumento ou varios argumentos separadas por vírgulas.
+ Nesse caso, foram adicionados dois elementos: `'item 3'` e `'item 4'` em itens.
+
+ - Observe que `.push` transforma itens alterando o array inicial.
+
+Em suma, `.push()` é um método que modifica um array adicionando elementos a ele.
+
+# O MÉTODO .pop()
+
+Outro método integrado é o `.pop()`, que remove o último item de um array:
+
+    const itens = ['item 0', 'item 1', 'item 2'];
+
+    const remover Itens = itens.pop();
+
+    console.log(itens);
+
+    console.log(removerItens);
+--------------------------------
+    Terminal:
+    [`item 0`, `item 1`]
+    `item 2`
+--------------------------------
+
+ - Ao chamar `.pop()`o elemento `item 2` foi removido do final do array `itens`.
+
+ -`.pop()` retonar o valor do último elemento. No exemplo, o valor retornado foi
+ armazenado na variável `removerItens` para ser usado posteriormente.
+
+ - `.pop()`é um método que altera o array inicial.
+
+Em resumo, `.pop()` transforma um array removendo o último elemento.
+
+# MAIS MÉTODOS DE ARRAY
+
+`.pop()`e `.push()` transformam o array no qual são chamados. No entanto, há
+momentos em que não queremos transformar o array original e podemos usar 
+métodos de array não mutantes.
+
+`verificar Mozilla Developer Network para entender o comportarmento de alguns dos métodos de array`
+
+Alguns métodos de arrays que estão disponivies para pessoas desenvolvedora de JavaScript
+incluem: `.join(), .slice(), .splice(), .shift(), .unshift() e .concat()` entre muitos outros.
+O uso desses métodos integrados torna mais fácil realizar algumas tarefas comuns ao trabalhar com arrays.
+
+Existem muitos outros métodos de array além de `.push()`, `.pop()` e dos supracitados.
+
+
+# ARRAY E FUNÇÕES
+
+Existem arrays mutáveis ou não mutáveis.
+
+O que acontece ao tentar alterar um array dentro de uma função?
+
+O array mantém a alteração após a chamada da função ou seu espaço 
+matém-se dentro da função?
+
+Veja o exemplo a seguir, onde `.push()` é chamado no array dentro de uma função:
+
+Lembre-se de que o método `.push()` sofre mutação ou altera um array:
+
+    const flores = ['tulipa', 'rosa', 'lirio'];
+
+    function adicionarFlor(novaFlor) {
+        novaFlor.push('peônia');
+    }
+
+    adicionarFlor(flores);
+
+    console.log(flores);
+--------------------------------
+    Terminal:
+    [`tulipa`, `rosa`, `lirio`, `peônia`]
+--------------------------------
+
+ - O array `flores` possui 3 elementos.
+
+ - A função `adicionarFlor` tem um parâmetro nomeado como `novaFlor`. Foi usado
+ o método `.push()` para adicionar o elemento `'peônia'` ao elemento novaFlor.
+
+ - Ao registrar `flores` no console, o elemento `peônia` foi inclu;ido, ou seja
+ o array sofre uma mutação.
+
+Portanto, se um array passado para a função sofrer mutação dentro da função, essa mudança
+também será mantida fora da função.
+
+Esse conceito também pode ser explicado como **passagem por referência**, uma vez que
+é realmente passado para a função é uma referência para onde a memória variável está
+armazenada e alterando a memória.
+
+# ARRAYS ANINHADOS (Nested arrays)
+
+Arrays podem armazenar outros arrays. Quando um array contém outro array, é chamado
+de **array aninhado** ou **nested arrays**, em inglês
+
+Exemplo:
+
+    const arrayAninhado = [['A'], ['B', 'C']];
+
+Para acessar os arrays aninhados, use a notação de colchestes com o valor do indes, 
+assim como é feito para acessar qualquer outro elemento:
+
+    const arrayAninhado = [['A'], ['B', 'C']];
+    console.log(arrayAninhado[1]);
+--------------------------------
+    Terminal:
+    `[B, C]`
+--------------------------------
+
+O `arrayAninhado[1]` retornou o elemento no index 1, que é o array `[B, C]`.
+
+Assim para acessar elementos em arrays aninhados, é possível adicionar mais
+notações de colchetes com valores de index.
+
+    const arrayAninhado = [['A'], ['B', 'C']];
+
+    console.log(arrayAninhado[1]);
+    console.log(arrayAninhado[1][0]);
+--------------------------------
+    Terminal:
+    `B`
+--------------------------------
+
+Na segunda instrução `console.log(), há duas notaçòes de colchetes encadeadas em
+`arrayAninhado`.
+
+O `arrayAninhado[1]` é o array `[B, C]`. Então, para retornar o primeiro elemento
+desse array, utiliza-se `arrayAninhado[1][0]` e obtém-se o valor `B`.
