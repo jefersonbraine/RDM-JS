@@ -1576,3 +1576,48 @@ adicion-ase uma seta `=>` que aponta para o corpo da função circundando `{}` a
 É importante familiarizar-se com as várias maneiras de escrever funções, pois cada uma delas
 está presente em outro código JavaScript.
 
+# FUNÇÕES CONCISAS
+
+Existe outras formas de refatorar a sintaxe da arrow function em JavaScript.
+
+A forma mais condensada da funçõa é conhecida como `corpo conciso`.
+
+ 1. Funções que usam apenas um único
+ parâmerto não precisam que esse
+ parâmetro seja colocado entre parênteses.
+ No entanto, se uma função tiver ero ou
+ vários parâmetros, os parênteses são 
+ necessários.
+
+![corpo conciso](./images/fun-10.png)
+
+ 2. Um corpo de função composto por um bloco
+ de linha única não precisa de chaves. Sem
+ as chaves, tudo o que essa linha avaliar será
+ retornado automaticamente. O conteúdo do 
+ bloco deve seguri imediatamente a seta `=>`
+ e a palavra-chave `return` pode ser removida.
+ Isso é conhecida como `retorno implícito`.
+
+ ![corpo conciso](./images/fun-11.png)
+
+Assim, uma função:
+
+    const NumQuadrado = (num) => {
+        return num * num;
+    };
+
+Pode-se refatorar para:
+
+    const NumQuadrados = num => num * num;
+
+Sendo que as mudanças foram:
+
+ - Os parâmetros ao redor de `num`foram
+ removidos, pois há um único parâmetro.
+
+ - As chaves `{}` foram removidas, pois 
+ a função consiste em um bloco de linha única.
+
+ - A palavra-chave `return` foi removida, pois a 
+ função consiste em um bloco de linha única.
