@@ -1489,3 +1489,48 @@ A segunda instrução do retorno `largura * altura` não será executada.
 
 A palavra-chave `return`permite que funções produzam uma saída que pode, inclusive, 
 ser salva em uma variável para uso posterior.
+
+# FUNÇÕES AUXILIARES
+
+Também é possível usar o valor de retorno de uma função dentro de outra função.
+
+Essas funções sendo chamadas dentro de outra função são conhecidas como **funções auxiliares**.
+
+Como cada função realizar uma tarefa específica, toma o código mais fácil de ler e depurar, se necessário.
+
+Para definir uma função que converta a temperatura de Celsius para Fahrenheit, por exemplo, pode-se escrever
+duas funções como:
+
+    function multiplicarPorNoveQuintos(numero) {
+        return numero * (9/5);
+    };
+
+    function obterFahrenheit(celsius) {
+        return multiplicarPorNoveQuintos(celsius) + 32;
+    };
+
+    obterFahrenheit(15);
+--------------------------------
+    Terminal:
+    `59.0`
+--------------------------------
+
+ - `obterFahrenheit()` foi chamado passando `15` como um argumento.
+
+ - o código dentro de `obterFahrenheit()` chamou `multiplicarPorNoveQuintos()` passando `15` como um argumento.	
+
+ - `multiplicarPorNoveQuintos()` leva o argumento de `15`para o parâmetro numero.
+
+ - o bloco de código dentro da função `multiplicarPorNoveQuintos()` multiplica `15` por 9/5, que o avalia como `27`, a conta é feita da seguinte maneira `(15 * 9) /5`.
+
+ - `27` é retornado para a chamada de função em `obterFahrenheit()`.
+
+ - `obterFahrenheit()` continua a executar.
+ Acrescenta `32` a `27`, que avalia a 59.
+
+ - Finalmente, `59` retorna à chamada de função obterFahrenheit(15).
+
+Funções podem ser usadas para separar pequenos pedações de lógica ou taredas e, em seguida, usá-los quando necessário.
+
+Escrever funções auxiliares pode ajudar a pegar tarefas grandes e difíceis e dividi-las em tareas menores e mais gerenciáveis.
+
