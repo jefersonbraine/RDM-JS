@@ -1920,3 +1920,212 @@ Na segunda instrução `console.log(), há duas notaçòes de colchetes encadead
 
 O `arrayAninhado[1]` é o array `[B, C]`. Então, para retornar o primeiro elemento
 desse array, utiliza-se `arrayAninhado[1][0]` e obtém-se o valor `B`.
+
+# ESCOPO
+
+## O QUE É ESCOPO?
+
+Escopo (Scope) é algo importante na programção, pois define onde as variáveis
+podem ser acesadas ou referenciadas, ou seja, determina a acessibilidade (visibilidade)
+das variáveis.
+
+Enquanto algumas variáveis podem ser acessadas de qualquer lugar dentro de um programa, outras 
+variáveis podem estar disponíveis em um contexto específico.
+
+# BLOCOS E ESCOPO
+
+Antes de abordar mais sobre o escopo, primeiro precisamos abordar os blocos.
+
+Os blocos são usados em funções e instruções `if`. Um bloco é o código encontrado dentro de um
+conjuento de chaves `{}`.
+
+Os blocos ajudam a agrupar uma ou mais instruções e servem como um marcador estrututal imporante 
+para o código.
+
+Um bloco de código pode ser uma função,
+como esta:
+
+    const corDoCeu = () => {
+        let cor = 'azul';	
+        console.log(cor);
+    }
+--------------------------------
+    Terminal:
+    `azul`
+--------------------------------
+
+Observe que o corpo da função é, na verdade um bloco de código.
+
+Observe o bloco em uma declaração `if`.
+
+    if (crepusculo) {
+        let cor = 'rosa';
+        console.log(cor);
+    }
+--------------------------------
+    Terminal:
+    `rosa`
+--------------------------------
+
+# ESCOPO GLOBAL (Global scope)
+
+Escopo é o contexto no qual as variáveis são declaradas. Pensa-se no escopo em relação aos blocos
+porque as variáveis podem exisiter fora ou dentro desses blocos.
+
+No escopo global (global scope), as variáveis são declaradas fora dos blocos. Essas variáveis
+são chamadas de variáveis globais.
+
+Como as variáveis globais não estão vinculadas a um bloco, elas podem ser acessadas por
+qualquer código do programa, incluindo código em blocos.
+
+    const cor = 'azul';
+
+    const returnCorDoCeu = () => {
+        return cor;
+    };
+
+    console.log(returnCorDoCeu());
+--------------------------------
+    Terminal:
+    `azul`
+--------------------------------
+
+ - Mesmo que a variável `cor` seja definida fora do bloco, ela
+ pode ser acessada no bloco de funções, dando-lhe um escopo global.
+
+ - por sua vez, `cor` pode ser acessada dentro do bloco de função
+ `returnCorDoCeu`.
+
+# ESCOPO DE BLOCO (Block scope)
+
+Quando uma variável é definida dentro de um bloco, ele só é acessível ao código entre chaves
+`{}`. Diz-se que a variável tem escopo de bloco porqu é acessivel exclusivamente para
+as linhas de código dentro desse bloco.
+
+As variáveis declaradas com escpo de bloco são conhecidas como variáveis locais porque
+estão disponíveis apenas para o código que faz parte do mesmo bloco.
+
+    cont corDoCeu = () => {
+        let cor = 'azul';
+        console.log(cor);
+    };
+
+    corDoCeu();
+    console.log(cor);
+--------------------------------
+    Terminal:
+    `azul`
+    `ReferenceError: cor is not defined`
+--------------------------------
+
+Perceba que:
+ 
+ - A função `corDoCeu()` foi definida.
+
+ - Dentro da função, a variável `cor`está
+ disponível apenas entre as chaves da função.
+
+ - ao tentar registrar a mesma variável fora da
+ funçào, ocorre uma `ReferenceError`.
+
+## ESCOPO POLUÍDO
+
+Tonar todas as variáveis acessíveis a qualquer parte do
+código pode parecer uma boa ideia, mas ter muitas variáveis
+globais pode trazer problemas.
+ 
+
+A serem declaradas, as variáveis globais vão para o namespace global.
+O namespace global permite que as variáveis sejam acessíveis de qualquer
+lugar no programa.
+
+Essas variáveis permanecem lá até que o programa termine, o que significa que o
+namespace global pode ser preenchido muito rapidamente.
+
+A poluição do escopo torna difícil acompanhar as diferente variáveis e traz acidentes
+em potencial.
+
+Por exemplo, variáveis com escopo global podem colidir com outras variáveis de escopo
+local, causando um comportamente inesperado no código.
+
+Exemplo de poluição de escopo para evitar futuramente.
+
+    let num = 50;
+
+    const logNum = () => {
+        num = 100;
+        console.log(num);
+    }
+
+    logNum();
+    console.log(num);
+--------------------------------
+    Terminal:
+    `100`
+    `100`
+--------------------------------
+
+Perceba que:
+ - há uma variável `num`.
+
+ - dentro do corpo da função de `logNum()`, declarou-se uma nova variável,
+ mas sem usar a palavra-chave `let`.
+
+ - ao chamar `logNum()`, `num` é reatribuido para `100`.
+
+ - a reatribuição dentro de `logNum()` afeta a variável global `num`.
+
+ - mesmo que a reatribuição seja permitida e não obtenha-se um erros, se `num` for usado
+ mais tarde, `num` terá um novo valor que não aquele definido inicialmente.
+
+Embora seja importante saber o que é escopo global, é uma prática recomendada não definir
+variáveis no escopo global.
+
+# BOAS PRÁTICA DE ESCOPO
+
+Uma vez observado que o uso indiscrimado de variáveis globais e a poluiçào do escopo 
+podem trazer problemas para o código, é importante definir algumas boas práticas para
+definir o escopo das variáveis usando o escopo de bloco, melhorando o código em 
+várias maneiras:
+
+ - torna o código mais legível, pois os blocos organizam o código em seções distintas.
+
+ - torna o código mais compreensivel, pois esclarece quais variáveis estão associadas a
+ diferentes partes do programa, em vez de ter que controlá-las linha após linha.
+
+ - é mais fácil manter o código, pois ele será modular.
+
+ - economia de memória no código porque deixará de exister depois que o bloco terminar
+ de ser executado.
+
+Exemplo de como usar o escopo de bloco, dentro de um bloco `if`.
+
+    const corDoCeu = () => {
+        const crepusculo = true;
+        let cor = 'azul';
+        if (crepusculo) {
+            let cor = 'rosa';
+            console.log(cor); // rosa
+        }
+        console.log(cor); // azul
+    };
+
+    console.log(cor); // ReferenceError: cor is not defined
+
+Note que:
+
+ - criou-se uma variável `crepusculo`dentro da função `corDoCeu()`.
+
+ - após a declaração `if`, definiu-se um novo bloco de código com
+ as chaves `{}. Atribuiu-se um novo valor à variável `cor` se a declaração
+ `if`for verdadeira.
+
+ - dentro do bloco `if`, a variável `cor` retém o valor `rosa`, embora fora
+ do bloco `if`, no corpo da função, a variável `cor` retém o valro `azul`.	
+
+ - embora tenha sido usado o escopo de bloco, o namespace foi poliido por
+ reutilizar o mesmo nome de variável duas vezes. Uma prática melhor seria
+ renomear a variável dentro do bloco.
+
+O escopo de bloco é importanet em JavaScript, pois permite definir variáveis com precisão, e 
+não poluir o namespace global.
