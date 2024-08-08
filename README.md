@@ -1925,7 +1925,7 @@ desse array, utiliza-se `arrayAninhado[1][0]` e obtém-se o valor `B`.
 
 ## O QUE É ESCOPO?
 
-Escopo (Scope) é algo importante na programção, pois define onde as variáveis
+Escopo (Scope) é algo importante na programação, pois define onde as variáveis
 podem ser acesadas ou referenciadas, ou seja, determina a acessibilidade (visibilidade)
 das variáveis.
 
