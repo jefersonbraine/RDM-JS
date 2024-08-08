@@ -1643,7 +1643,7 @@ Resoluções Ano Novo:
 Agora, essa mesma lista escrita em JavaScript,
 como um array.
 
-    lete resolucoesAnoNovo = ['Praticar programação com o Motiro', 
+    let resolucoesAnoNovo = ['Praticar programação com o Motiro', 
     'Evoluir na lingua inglesa', 'Obter o trabalho dos sonhos'];
 
     console.log(resolucoesAnoNovo);

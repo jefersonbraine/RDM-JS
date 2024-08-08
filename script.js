@@ -213,3 +213,83 @@ const regarPlaneta = function(dia) {
 
 const regarPlanta = dia => dia === 'Sabado' ? true : false;
 console.log(regarPlanta('sabado'));
+
+// ARRAYS
+
+let resolucoesAnoNovo = ['praticar programação', 'ler livros', 'dormir'];
+console.log(resolucoesAnoNovo);
+
+
+const sulDeMinasGerais = ['varginha', 'poços de caldas', 'belo horizonte'];
+console.log(sulDeMinasGerais[1]);
+
+
+const centroOestePaulista = ['são paulo', 'ribeirão preto', 'campinas'];	
+const cidade = centroOestePaulista[0];
+console.log(cidade);
+
+
+let pilotosF1 = ['Vettel', 'Alonso', 'Raikkonen', 'Massa'];
+pilotosF1[1] = 'verstappen';
+console.log(pilotosF1);
+
+const quantidade = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(quantidade.length);
+
+
+const pets = ['cachorro', 'gato', 'papagaio', 'elefante', 'rinoceronte'];
+console.log(pets.slice(1, 2));
+
+
+const boasVindas = 'Boas-vindas ao README!';
+console.log(boasVindas[15]);
+
+const livros = ['livro1', 'livro2', 'livro3', 'livro4'];
+livros.pop();
+console.log(livros);
+
+const cores = ['rosa', 'verde', 'amarelo'];
+cores.shift();
+console.log(cores)
+
+const cores1 = ['rosa', 'amarelo'];
+cores1.unshift('azul');
+console.log(cores1)
+
+const carros = ['BMW', 'Mercedes', 'Audi'];
+carros.push('Volkswagen');
+console.log(carros)
+
+
+//----------------------/////------------
+
+const conceito = ['arrays', 'podem', 'ser', 'mutáveis'];
+function editarArray(array){
+    array[3] = 'MUTÁVEIS';
+}
+editarArray(conceito);
+console.log(conceito)
+
+const removerElemento = novoArray => {
+    novoArray.pop();
+}
+removerElemento(conceito);
+console.log(conceito)
+
+//----------------------/////------------------
+
+const redesSociais = ['Facebook', 'Instagram', 'Twitter'];
+function addRedeSocial(tiktok) {
+    tiktok.push('TikTok');	
+}
+addRedeSocial(redesSociais);
+console.log(redesSociais);
+
+
+const pets1 = ['cachorro', 'gato', 'papagaio', 'elefante', 'rinoceronte'];
+const gatoIndex = pets1.indexOf('gato');
+
+// variável chamada animais e atribua como valor um nested array com 3 arrays dentro
+const animais = [['cachorro', 'gato',], ['papagaio', 'elefante', 'rinoceronte'], ['cavalo', 'cabra']];
+
+const reptil = animais[2][1];
