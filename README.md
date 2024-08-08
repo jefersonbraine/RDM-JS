@@ -2127,5 +2127,6 @@ Note que:
  reutilizar o mesmo nome de variável duas vezes. Uma prática melhor seria
  renomear a variável dentro do bloco.
 
-O escopo de bloco é importanet em JavaScript, pois permite definir variáveis com precisão, e 
+O escopo de bloco é importante em JavaScript, pois permite definir variáveis com precisão, e 
 não poluir o namespace global.
+

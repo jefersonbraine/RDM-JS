@@ -292,4 +292,4 @@ const gatoIndex = pets1.indexOf('gato');
 // variável chamada animais e atribua como valor um nested array com 3 arrays dentro
 const animais = [['cachorro', 'gato',], ['papagaio', 'elefante', 'rinoceronte'], ['cavalo', 'cabra']];
 
-const reptil = animais[2][1];
+const reptil = animais[2][1];A
