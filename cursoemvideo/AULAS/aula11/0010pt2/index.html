@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+</head>
+<body>
+    <h1>Saiba se você é um estrangeiro ou Brasileiro</h1>
+
+     <input type="text" name="txtps" id="txtps" placeholder="digite o nome do seu país"  autocomplete="country" required minlength="3">
+   
+    <input type="submit" value="verificar" onclick="verificar()">
+    <div id="ver"></div>
+
+
+
+    <script>
+
+        function verificar() {
+            var txtn = document.getElementById('txtps')
+            var ver = document.getElementById('ver')
+            var vern = (txtps.value)
+
+            ver.innerHTML = `Sua nacionalidade é ${vern} `
+
+            if (vern == 'brasil') {
+                ver.innerHTML += `voce é Brasileiro`
+            } else {
+                ver.innerHTML += `voce é estrangeiro`
+            }
+            
+        }
+            
+        
+    
+            
+
+
+    </script>
+</body>
+</html>
