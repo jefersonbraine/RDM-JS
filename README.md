@@ -1340,7 +1340,7 @@ O código dentro do corpo de uma função é executado quando a função é cham
 
 O nome da função deve ser seguido por parênteses () para chamar uma função no código.
 
-![call function](./images/fun-4.png.png)
+![call function](./images/fun-4.png)
 
 A chamada de função executa o corpo da função ou todas as instruções entre as chaves 
 na declaração da função.
