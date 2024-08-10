@@ -47,7 +47,7 @@ Os comentários são boas práticas por vários motivos, como por exemplo, organ
 do código, explicar o funcionamento de blocos de código, dar dicas, deixar instruções ou
 qualquer outra informação útil para outras pessoas, etc.
 
-Em JavaScript, os **comentários de linha única** são criados com duas barras consecutivas //.
+Em JavaScript, os **comentários de linha única** são criados com duas barras consecutivas `//`.
 
  `// Duas barras significam um comentário`
 
@@ -304,7 +304,7 @@ do que aritméticas, o JavaScript tem o objeto embutido `Math`.
 A grande vantagem dos objetos é que eles possuem métodos.
 
 Veja o exemplo abaixo onde é chamado o método
-.random() no objeto embutido Math:
+`.random()` no objeto embutido Math:
 
     `console.log(Math.random());`
 --------------------------------
@@ -1399,7 +1399,7 @@ os parâmetros são declarados.
 
 ![altura e largura](./images/fun-7.png)
 
-As variáveis retLargura e reAltura foram inicializadas com os valores de altura e largura,
+As variáveis `retLargura` e `reAltura` foram inicializadas com os valores de altura e largura,
 de um retângulo antes de serem usadas na chama de função,
 
 Usando parâmetros, calcularArea() pode ser reutilizado para calcular a áea de qualquer retângulo!
