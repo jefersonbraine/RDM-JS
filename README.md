@@ -2386,7 +2386,7 @@ Sintaxe do `continue`:
 Exemplo 1:
 
 O exemplo a seguir mostra um laço `while`utilizando `continue`que executará quando o valor de `i` for
-igual a 3. Desta forma, `n` recebe os valores um, tres, sete e doze:
+igual a 3. Desta forma, `n` recebe os valores um, três, sete e doze:
 
     i = 0;
     n = 0;
