@@ -2114,7 +2114,7 @@ Exemplo de como usar o escopo de bloco, dentro de um bloco `if`.
 
 Note que:
 
- - criou-se uma variável `crepusculo`dentro da função `corDoCeu()`.
+ - criou-se uma variável `crepusculo` dentro da função `corDoCeu()`.
 
  - após a declaração `if`, definiu-se um novo bloco de código com
  as chaves `{}. Atribuiu-se um novo valor à variável `cor` se a declaração
@@ -2123,7 +2123,7 @@ Note que:
  - dentro do bloco `if`, a variável `cor` retém o valor `rosa`, embora fora
  do bloco `if`, no corpo da função, a variável `cor` retém o valro `azul`.	
 
- - embora tenha sido usado o escopo de bloco, o namespace foi poliido por
+ - embora tenha sido usado o escopo de bloco, o namespace foi polido por
  reutilizar o mesmo nome de variável duas vezes. Uma prática melhor seria
  renomear a variável dentro do bloco.
 
@@ -2146,7 +2146,7 @@ pode ser expressa em um laço desta forma:
     }
 
 Existe várias formas diferentes de laços, mas eles essencialmente fazer
-a mesma coisa: repetir uma ação múltiplas vezes. ( inclusive você poderá repetir 0 vezes).
+a mesma coisa: repetir uma ação múltiplas vezes. (inclusive você poderá repetir 0 vezes).
 Os vários mecanismos diferentes de laços oferecem diferentes formas de determinar quando este
 irá começar ou terminar. Há várias situações em que é mais fácil resolver um problema
 utilizando um determinado tipo de laço do que outros.
