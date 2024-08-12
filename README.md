@@ -1338,7 +1338,7 @@ executado, apenas declara a existência da função.
 
 O código dentro do corpo de uma função é executado quando a função é chamada.
 
-O nome da função deve ser seguido por parênteses () para chamar uma função no código.
+O nome da função deve ser seguido por parênteses `()` para chamar uma função no código.
 
 ![call function](./images/fun-4.png)
 
