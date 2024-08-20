@@ -825,7 +825,7 @@ selecionar novamente a opção de espaço reservado "--Make a choice--" mostrada
 # DECLARAÇÃO if
 
 Constantemente decidimos realizar uma tarefa tendo como base uma condição: se estiver frio,
-vou usar uma blusca; se chover, levo um guarda-chuva; se estiver com sono, durmo.
+vou usar uma blusa; se chover, levo um guarda-chuva; se estiver com sono, durmo.
 
 Ao programar, também é possivel realizar uma tarefa baseando-se em uma condição.
 Para isso, utiliza-se a instrução `if`:
@@ -1014,7 +1014,7 @@ Ela deverá apenas ter um valor, seja ele qual for, em outras palavaras, é nece
     `Aqui existe um valor!`
 --------------------------------
 
-O bloco de código na instrução `if`foi executado por `verificarValor` tem um valor verdadeiro.
+O bloco de código na instrução `if` foi executado por `verificarValor` tem um valor verdadeiro.
 
 Mesmo que o valor de `verificarValor` não seja explicitamente o valor `true`, quando usado em um contexto
 booleando ou condicional, ele é avaliado como `true` porque foi atribuído um valor não falso.
@@ -1154,7 +1154,7 @@ A declaração `else if` também exige uma condição. Veja a sintaxe:
     `☁️`
 --------------------------------
 
-As declarações else if permite vários resultados possíveis.
+As declarações else if permitem vários resultados possíveis.
 
 Instruções `if/ else if/` else são lidas de cima para baixo, então a primeira condição avaliada como true de cima para baixo
 é o bloco que será executado.
@@ -1487,7 +1487,7 @@ a string `'Os números devem ser inteiros positivos para calcular a área!'`.
 
 A segunda instrução do retorno `largura * altura` não será executada.
 
-A palavra-chave `return`permite que funções produzam uma saída que pode, inclusive, 
+A palavra-chave `return` permite que funções produzam uma saída que pode, inclusive, 
 ser salva em uma variável para uso posterior.
 
 # FUNÇÕES AUXILIARES
@@ -1564,7 +1564,7 @@ contém o corpo da função.
 A versão ES6 introduziu a sintaxe da `Arrow Function`, ou função de sete, que nada mais é do que uma maneira
 mais curta de se escrever funções usando uma anotação especial de `seta grande` `() => `.
 
-As arrow functions eliminan a necessidade de digitar a palavra-chave `function` toda vez que for
+As arrow functions eliminam a necessidade de digitar a palavra-chave `function` toda vez que for
 preciso cirar uma função. Em vez disso, primeiro inclui-se os parâmetros dentro de `( )` e, em seguida,
 adicion-ase uma seta `=>` que aponta para o corpo da função circundando `{}` assim:
 
@@ -1580,7 +1580,7 @@ está presente em outro código JavaScript.
 
 Existe outras formas de refatorar a sintaxe da arrow function em JavaScript.
 
-A forma mais condensada da funçõa é conhecida como `corpo conciso`.
+A forma mais condensada da função é conhecida como `corpo conciso`.
 
  1. Funções que usam apenas um único
  parâmerto não precisam que esse
