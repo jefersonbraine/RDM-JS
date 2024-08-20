@@ -611,7 +611,7 @@ o **valor da variável é atualizado e atribuido como o novo valor dessa variáv
 
 # CONCATENAR STRINGS E VARIÁVEIS
 
-O operador `+` tabém pode ser usado para combinar dois valores de string, ainda que
+O operador `+` também pode ser usado para combinar dois valores de string, ainda que
 esses valores estiverem sendo armazenados em variáveis. Veja a seguir:
 
     let appFavorito = 'Insta';
