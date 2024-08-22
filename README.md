@@ -47,7 +47,7 @@ Os comentários são boas práticas por vários motivos, como por exemplo, organ
 do código, explicar o funcionamento de blocos de código, dar dicas, deixar instruções ou
 qualquer outra informação útil para outras pessoas, etc.
 
-Em JavaScript, os **comentários de linha única** são criados com duas barras consecutivas //.
+Em JavaScript, os **comentários de linha única** são criados com duas barras consecutivas `//`.
 
  `// Duas barras significam um comentário`
 
@@ -304,7 +304,7 @@ do que aritméticas, o JavaScript tem o objeto embutido `Math`.
 A grande vantagem dos objetos é que eles possuem métodos.
 
 Veja o exemplo abaixo onde é chamado o método
-.random() no objeto embutido Math:
+`.random()` no objeto embutido Math:
 
     `console.log(Math.random());`
 --------------------------------
@@ -611,7 +611,7 @@ o **valor da variável é atualizado e atribuido como o novo valor dessa variáv
 
 # CONCATENAR STRINGS E VARIÁVEIS
 
-O operador `+` tabém pode ser usado para combinar dois valores de string, ainda que
+O operador `+` também pode ser usado para combinar dois valores de string, ainda que
 esses valores estiverem sendo armazenados em variáveis. Veja a seguir:
 
     let appFavorito = 'Insta';
@@ -825,7 +825,7 @@ selecionar novamente a opção de espaço reservado "--Make a choice--" mostrada
 # DECLARAÇÃO if
 
 Constantemente decidimos realizar uma tarefa tendo como base uma condição: se estiver frio,
-vou usar uma blusca; se chover, levo um guarda-chuva; se estiver com sono, durmo.
+vou usar uma blusa; se chover, levo um guarda-chuva; se estiver com sono, durmo.
 
 Ao programar, também é possivel realizar uma tarefa baseando-se em uma condição.
 Para isso, utiliza-se a instrução `if`:
@@ -1014,7 +1014,7 @@ Ela deverá apenas ter um valor, seja ele qual for, em outras palavaras, é nece
     `Aqui existe um valor!`
 --------------------------------
 
-O bloco de código na instrução `if`foi executado por `verificarValor` tem um valor verdadeiro.
+O bloco de código na instrução `if` foi executado por `verificarValor` tem um valor verdadeiro.
 
 Mesmo que o valor de `verificarValor` não seja explicitamente o valor `true`, quando usado em um contexto
 booleando ou condicional, ele é avaliado como `true` porque foi atribuído um valor não falso.
@@ -1154,7 +1154,7 @@ A declaração `else if` também exige uma condição. Veja a sintaxe:
     `☁️`
 --------------------------------
 
-As declarações else if permite vários resultados possíveis.
+As declarações else if permitem vários resultados possíveis.
 
 Instruções `if/ else if/` else são lidas de cima para baixo, então a primeira condição avaliada como true de cima para baixo
 é o bloco que será executado.
@@ -1338,9 +1338,9 @@ executado, apenas declara a existência da função.
 
 O código dentro do corpo de uma função é executado quando a função é chamada.
 
-O nome da função deve ser seguido por parênteses () para chamar uma função no código.
+O nome da função deve ser seguido por parênteses `()` para chamar uma função no código.
 
-![call function](./images/fun-4.png.png)
+![call function](./images/fun-4.png)
 
 A chamada de função executa o corpo da função ou todas as instruções entre as chaves 
 na declaração da função.
@@ -1399,7 +1399,7 @@ os parâmetros são declarados.
 
 ![altura e largura](./images/fun-7.png)
 
-As variáveis retLargura e reAltura foram inicializadas com os valores de altura e largura,
+As variáveis `retLargura` e `reAltura` foram inicializadas com os valores de altura e largura,
 de um retângulo antes de serem usadas na chama de função,
 
 Usando parâmetros, calcularArea() pode ser reutilizado para calcular a áea de qualquer retângulo!
@@ -1487,7 +1487,7 @@ a string `'Os números devem ser inteiros positivos para calcular a área!'`.
 
 A segunda instrução do retorno `largura * altura` não será executada.
 
-A palavra-chave `return`permite que funções produzam uma saída que pode, inclusive, 
+A palavra-chave `return` permite que funções produzam uma saída que pode, inclusive, 
 ser salva em uma variável para uso posterior.
 
 # FUNÇÕES AUXILIARES
@@ -1564,7 +1564,7 @@ contém o corpo da função.
 A versão ES6 introduziu a sintaxe da `Arrow Function`, ou função de sete, que nada mais é do que uma maneira
 mais curta de se escrever funções usando uma anotação especial de `seta grande` `() => `.
 
-As arrow functions eliminan a necessidade de digitar a palavra-chave `function` toda vez que for
+As arrow functions eliminam a necessidade de digitar a palavra-chave `function` toda vez que for
 preciso cirar uma função. Em vez disso, primeiro inclui-se os parâmetros dentro de `( )` e, em seguida,
 adicion-ase uma seta `=>` que aponta para o corpo da função circundando `{}` assim:
 
@@ -1580,7 +1580,7 @@ está presente em outro código JavaScript.
 
 Existe outras formas de refatorar a sintaxe da arrow function em JavaScript.
 
-A forma mais condensada da funçõa é conhecida como `corpo conciso`.
+A forma mais condensada da função é conhecida como `corpo conciso`.
 
  1. Funções que usam apenas um único
  parâmerto não precisam que esse
@@ -2114,7 +2114,7 @@ Exemplo de como usar o escopo de bloco, dentro de um bloco `if`.
 
 Note que:
 
- - criou-se uma variável `crepusculo`dentro da função `corDoCeu()`.
+ - criou-se uma variável `crepusculo` dentro da função `corDoCeu()`.
 
  - após a declaração `if`, definiu-se um novo bloco de código com
  as chaves `{}. Atribuiu-se um novo valor à variável `cor` se a declaração
@@ -2123,7 +2123,7 @@ Note que:
  - dentro do bloco `if`, a variável `cor` retém o valor `rosa`, embora fora
  do bloco `if`, no corpo da função, a variável `cor` retém o valro `azul`.	
 
- - embora tenha sido usado o escopo de bloco, o namespace foi poliido por
+ - embora tenha sido usado o escopo de bloco, o namespace foi polido por
  reutilizar o mesmo nome de variável duas vezes. Uma prática melhor seria
  renomear a variável dentro do bloco.
 
@@ -2146,7 +2146,7 @@ pode ser expressa em um laço desta forma:
     }
 
 Existe várias formas diferentes de laços, mas eles essencialmente fazer
-a mesma coisa: repetir uma ação múltiplas vezes. ( inclusive você poderá repetir 0 vezes).
+a mesma coisa: repetir uma ação múltiplas vezes. (inclusive você poderá repetir 0 vezes).
 Os vários mecanismos diferentes de laços oferecem diferentes formas de determinar quando este
 irá começar ou terminar. Há várias situações em que é mais fácil resolver um problema
 utilizando um determinado tipo de laço do que outros.
@@ -2386,7 +2386,7 @@ Sintaxe do `continue`:
 Exemplo 1:
 
 O exemplo a seguir mostra um laço `while`utilizando `continue`que executará quando o valor de `i` for
-igual a 3. Desta forma, `n` recebe os valores um, tres, sete e doze:
+igual a 3. Desta forma, `n` recebe os valores um, três, sete e doze:
 
     i = 0;
     n = 0;
