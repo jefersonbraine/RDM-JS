@@ -262,3 +262,5 @@ Se o documento não contém esta seção, cria uma.
         pre.appendChild(text);                      // adiciona o texto no <pre>
         log.appendChild(pre);                       // adiciona o <pre> no log
     }
+
+    página 10
