@@ -77,3 +77,32 @@ arr.keys()                              // Array Iterator com keys
 arr.values()                            // Array Iterator com values
 // arr.values() - Retorna um iterator com os valores(value) do array.
 
+arr.findLast(x => x < 4);               // 3
+// arr.findLast(x => x < 4) - Retorna o último elemento do array que satisfaz a condição. No caso, o resultado é 3.
+
+arr.findLastIndex(x => x < 4);          // 2
+// arr.findLastIndex(x => x < 4) - Retorna o índice do último elemento do array que satisfaz a condição. No caso, o resultado é 2.
+
+arr.at(-1);                             // 5
+// arr.at(-1) - Retorna o elemento na posição especificada. No caso, -1 retorna o último elemento, que é 5.
+
+arr.flat();                             // [1, 2, 3, 4, 5]
+// arr.flat() - Retorna um novo array com todos os sub-arrays concatenados em um único array. No caso, não há sub-arrays, então o resultado é igual ao array original.
+
+arr.forEach(x => console.log(x));       // Logs: 1 2 3 4 5
+// arr.forEach(x => console.log(x)) - Executa uma função para cada elemento do array.
+
+arr.reduceRight((sum, x) => sum + x, 0); // 15
+// arr.reduceRight((sum, x) => sum + x, 0) - Aplica uma função cumulativa aos elementos do array, da direita para a esquerda, retornando um único valor.
+
+arr.toLocaleString();                    // '1,2,3,4,5'
+// arr.toLocaleString() - Retorna uma string com os elementos do array, separados por vírgula, formatados conforme a localidade do sistema.
+
+arr.toString();                          // '1,2,3,4,5'
+// arr.toString() - Retorna uma string com os elementos do array, separados por vírgula.
+
+Array.isArray(arr);                      // true
+// Array.isArray(arr) - Verifica se a variável passada é um array. No caso, o resultado é true.
+
+arr.copyWithin(0, 3, 5);                 // [4, 5, 3, 4, 5]
+// arr.copyWithin(0, 3, 5) - Copia uma parte do array para outra posição dentro do mesmo array. No caso, copia os elementos de índices 3 a 5 para o início do array.

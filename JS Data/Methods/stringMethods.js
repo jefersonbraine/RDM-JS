@@ -76,9 +76,3 @@
 
 " Developer".trimEnd()              //" Developer"
 //.trimEnd() - remove espaços em branco do final do string.
-
-
-
-
-
-
