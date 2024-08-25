@@ -59,3 +59,32 @@ object.preventExtensions(obj)                          // Impede que as propried
 object.fromEntries([["a", 1], ["b", 2], ["c", 3]]);    // Converte key-value pairs em um objeto
 //object.fromEntries([["a", 1], ["b", 2], ["c", 3]]) => converte key-value pairs em um objeto
 
+Object.getOwnPropertyDescriptor(obj, 'a');
+// Object.getOwnPropertyDescriptor(obj, 'a') - Retorna o descritor de propriedade para uma propriedade específica do objeto.
+
+Object.getOwnPropertyDescriptors(obj); 
+// Object.getOwnPropertyDescriptors(obj) - Retorna um objeto contendo todos os descritores de propriedade do objeto.
+
+Object.fromEntries(new Map([['a', 1], ['b', 2]]));  
+// Object.fromEntries(new Map([['a', 1], ['b', 2]])) - Converte um iterável de pares chave-valor em um objeto. No caso, retorna { a: 1, b: 2 }.
+
+Object.isFrozen(obj);                     // false
+// Object.isFrozen(obj) - Verifica se o objeto está congelado. No caso, retorna false.
+
+Object.isExtensible(obj);                 // true
+// Object.isExtensible(obj) - Verifica se é possível adicionar novas propriedades ao objeto. No caso, retorna true.
+
+Object.isSealed(obj);                     // false
+// Object.isSealed(obj) - Verifica se o objeto está selado. No caso, retorna false.
+
+Object.preventExtensions(obj);            
+// Object.preventExtensions(obj) - Impede a adição de novas propriedades ao objeto.
+
+Object.setPrototypeOf(obj, { d: 4 });     
+// Object.setPrototypeOf(obj, { d: 4 }) - Define o protótipo (ou [[Prototype]]) do objeto especificado para outro objeto ou null.
+
+Object.is(obj.a, 1);                      // true
+// Object.is(obj.a, 1) - Verifica se dois valores são o mesmo valor. No caso, retorna true.
+
+Object.values(obj);                       // [1, 2, 3]
+// Object.values(obj) - Retorna um array com os valores das propriedades enumeráveis de um objeto. No caso, retorna [1, 2, 3].
