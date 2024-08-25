@@ -76,3 +76,38 @@
 
 " Developer".trimEnd()              //" Developer"
 //.trimEnd() - remove espaços em branco do final do string.
+
+const str = "Hello, World!";
+
+str.replaceAll("l", "x");                // Hexxo, Worxd!
+// str.replaceAll("l", "x") - Substitui todas as ocorrências de um substring por outro. No caso, todas as letras "l" são substituídas por "x".
+
+str.localeCompare("Hello");              // 1
+// str.localeCompare("Hello") - Compara dois strings de acordo com a localidade. Retorna -1, 0 ou 1, dependendo de a string ser menor, igual ou maior, respectivamente.
+
+str.normalize();                         // 'Hello, World!'
+// str.normalize() - Retorna a forma Unicode normalizada do string.
+
+str.search(/World/);                     // 7
+// str.search(/World/) - Retorna o índice da primeira correspondência da expressão regular passada como parâmetro. No caso, retorna o índice 7.
+
+str.replace(/World/g, "Universe");       // 'Hello, Universe!'
+// str.replace(/World/g, "Universe") - Substitui as ocorrências que correspondem à expressão regular com o novo valor. No caso, "World" é substituído por "Universe".
+
+str.matchAll(/l/g);                      // Iterator
+// str.matchAll(/l/g) - Retorna um iterator com todas as correspondências da expressão regular no string.
+
+str.big();                               // <big>Hello, World!</big>
+// str.big() - Envolve o string em tags <big>. No caso, retorna '<big>Hello, World!</big>'.
+
+str.blink();                             // <blink>Hello, World!</blink>
+// str.blink() - Envolve o string em tags <blink>. No caso, retorna '<blink>Hello, World!</blink>'.
+
+str.fixed();                             // <tt>Hello, World!</tt>
+// str.fixed() - Envolve o string em tags <tt>. No caso, retorna '<tt>Hello, World!</tt>'.
+
+str.anchor("anchorName");                // <a name="anchorName">Hello, World!</a>
+// str.anchor("anchorName") - Envolve o string em uma tag <a> com o atributo name. No caso, retorna '<a name="anchorName">Hello, World!</a>'.
+
+str.link("http://example.com");          // <a href="http://example.com">Hello, World!</a>
+// str.link("http://example.com") - Envolve o string em uma tag <a> com o atributo href. No caso, retorna '<a href="http://example.com">Hello, World!</a>'.
