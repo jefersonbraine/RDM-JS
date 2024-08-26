@@ -232,7 +232,7 @@ Agora o objeto `Pont b` (e todos os futuros objetos Point) herda o método `r()`
     p.r()                       // => 1.41
 
 
-# 1.2 JavaScript do lado do cliente
+# JavaScript do lado do cliente
 
 A função a seguir demonstra diversas dessas técnicas básicas de `pesquisa e modificaçào de documentos`.
 
@@ -311,13 +311,13 @@ O exemplo demonstra vários recursos da linguagem básica e também importantes 
 
  # Estrutura léxica
 
- ## 2.1. Conjunto de caracteres
+ ## Conjunto de caracteres
  Os programas JS são escritos com o o conjunto de caracteres Unicode, que é um superconjunto de ASCCI e Latin-1, suportando praticamente todos os idiomas escritos usados hoje.
 
- ### 2.1.1 Maiúscuals e minúsculas
+ ### Maiúscuals e minúsculas
  JS diferencia letras maiúsculas de minúsculas, isso significa que palavras-chaves, variáveis, nomes de função e outros identificadores da linguagem sempre devem ser digitados da mesma forma, a palavra-chave `while`, pode exemplo, deve ser digitada `while` e não `While` ou `WHILE`. Da mesma forma, online, Online, OnLine e ONLINE, são quatros nomes totalmente diferentes.
 
- ### 2.1.2 Espaço em branco, quebras de linhas e caracteres de controle de formato
+ ### Espaço em branco, quebras de linhas e caracteres de controle de formato
 O JS ignora os espaços que aparecem entre sinais em programas, como também ignora quebras de linhas (mas existe uma exceção na seção 2.5), mas é possivel usar formatando e endentando os programas de um modo organizado e harmonioso.
 
 Além do caractere de espaço normal (\u0020), JavaScript também reconhece os seguintes caracteres como espaço em branco: tabulação (\u0009), tabulação vertical ( \u000B), avanço de página ( \u000C), espaço não separável (\u00A0), marca de ordem de byte (\uFEFF) e qualquer caractere unicode da categoria Zs. JavaScript reconhece os seguintes caracteres como términos de linha: avanço de linha ( \u000A), retorno de carro (\u000D), separador de linha (\u2028) e separador de parágrafo (\u2029). Uma sequência retorno de carro, avanço de linha é tratada como um único término de linha.
@@ -326,7 +326,7 @@ Os caracteres de controle de formato Unicode (categoria Cf ), como RIGHT-TO-LEFT
 ( \u200F ) e LEFT-TO-RIGHT MARK ( \u200E ), controlam a apresentação visual do texto em que
 ocorrem. Eles são importantes para a exibição correta de alguns idiomas e são permitidos em comen-tários, strings literais e expressões regulares literais de JavaScript, mas não nos identificadores (por exemplo, nomes de variável) de um programa JavaScript. Como casos especiais, ZERO WIDTH JOINER ( \u200D ) e ZERO WIDTH NON-JOINER ( \u200C ) são permitidos em identificadores, mas não como o primeiro caractere. Conforme observado anteriormente, o caractere de controle de formato de marca de ordem de byte (\uFEFF) é tratado como caractere de espaço.
 
-## 2.2 Comentários
+## Comentários
 
     // Comentário de uma linha
     /* Este também é um comentário */ // e aqui está outro comentário.
@@ -335,7 +335,7 @@ ocorrem. Eles são importantes para a exibição correta de alguns idiomas e sã
     * Ele tem várias linhas.
     */
 
-## 2.3 Literais
+## Literais
 Um literal é um valor de dados que aparece diretamente em um programa. Os valores seguintes são todos literais:
 12                  // O número doze
 1.2                 // O número um ponto dois
@@ -346,7 +346,7 @@ false               // O outro valor booleano
 /javascript/gi      // Uma "expressão regular" literal (para comparação de padrões)
 null                // Ausência de um objeto
 
-## 2.4 Identificadores e palavras reservadas
+## Identificadores e palavras reservadas
 Um identificador é simplesmente um nome, eles são usados para nomes a variáveis e funções para fornecer rótulos para certos laços no código JavaScript, um identificador deve começar com uma letra, um sublinhado(_) ou um cifrão($), já os seguintes podem ser letras, digitos, sublinhados ou cifrões.
 
 Todos estes são identificadores válidos:
@@ -357,7 +357,7 @@ Todos estes são identificadores válidos:
     _dummy
     $str
 
-## 2.5 Pontos e vírgulas opcionais
+## Pontos e vírgulas opcionais
 Em JavaScript, você normalmente pode omitir o ponto e vírgula entre duas instruções, caso essas instruções sejam escritas em linhas separadas. (Você também pode omitir um ponto e vírgula no final de um programa ou se o próximo sinal do programa for uma chave de fechamento `}`.)
 
 Muitos programadores JavaScript (e o código deste livro) utilizam pontos e vírgulas para marcar explicitamente os finais de instruções, mesmo onde eles não são obrigatório.
@@ -395,3 +395,175 @@ Porém, os parênteses na segunda linha de código podem ser interpretados como 
 função de f da primeira linha, sendo que JavaScript interpreta o código como segue:
 
     var y = x + f(a+b).toString();
+
+# Tipos, valores e variáveis
+
+### Tipos de Dados em JavaScript
+- Números: Usados para representar quantidades, como a sua idade ou o preço de um produto.
+Texto (Strings): Usados para representar palavras, frases ou qualquer texto que você queira exibir na tela.
+
+- Booleanos: Representam apenas dois valores: verdadeiro (true) ou falso (false). São usados para tomar decisões em seus programas.
+
+- Null e Undefined: Representam a ausência de valor. É como se fosse uma caixa vazia.
+
+- Objetos: São como caixas que podem conter vários tipos de dados, como uma lista de compras ou um cadastro de usuário.
+
+- Arrays: São listas ordenadas de valores. Imagine uma lista de nomes de seus amigos.
+Funções: São blocos de código que podem ser executados quando chamados. É como uma receita de bolo que você pode seguir para preparar algo.
+
+Valores em JavaScript são como os "ingredientes" que usamos para construir nossos programas. Eles são as informações que manipulamos e armazenamos.
+
+### Tipos de Valores:
+
+#### Primitivos:
+   - Números: Representam quantidades numéricas, como 42, 3.14, -5.
+
+   - Strings: Representam sequências de caracteres, como "Olá, mundo!", "JavaScript é legal".
+
+   - Booleanos: Representam valores lógicos, verdadeiro (true) ou falso (false).
+
+   - Null: Representa a ausência intencional de qualquer objeto valor.
+
+   - Undefined: Representa uma variável que foi declarada, mas ainda não recebeu um valor.
+
+- Objetos: São coleções de propriedades, onde cada propriedade tem um nome e um valor. Exemplos incluem arrays, funções e objetos personalizados.
+
+
+### Variáveis: Caixas para Guardar Valores
+
+**Variáveis são como caixas com rótulos.** Você pode colocar qualquer tipo de dado dentro dessas caixas e dar um nome para cada caixa. Assim, você pode encontrar o valor que precisa mais facilmente.
+
+Por exemplo, você pode criar uma variável chamada `nome` e colocar o seu nome dentro dela. Depois, você pode usar essa variável em outras partes do seu código para se referir ao seu nome.
+
+## Números
+JavaScript não faz distinção entre valores inteiros e valores em ponto flutuante, todos são representados como valores em ponto flutuante.
+
+Quando um número aparece diretamente ele é chamado de *literal numérico*.
+
+### Literais Inteiros
+No JavaScript, um inteiro de base 10 é escrito como uma sequência de digitos, por exemplo:
+
+    0
+    3
+    10000000
+
+Além da base 10, JavaScript reconhece valores hexadecimais (base 16)
+
+### Literais Inteiros
+Os literais em ponto flutuante podem ter um ponto decimal; eles uisam sintaxe tradicional dos números reais.
+
+Os literais em ponto flutuante também podem ser representados usando-se notação exponencial, por exemplo:
+
+Mais sucintamente, a sintaxe é:
+[dígitos][.dígitos][(E|e)[(+|-)]dígitos]
+
+Por exemplo:
+3.14
+2345.789
+.333333333333333333
+6.02e23 // 6.02 × 10²³
+1.4738223E-32 // 1.4738223 × 10³²
+
+### Aritmética em JavaScript
+Além dos operadores aritméticos básicos (+, -, *, /, %, **), JavaScript tem outros operadores aritméticos que vão ajudar a fazer operações mais complexas.
+
+    Math.pow(2,53)              // => 9007199254740992: 2 elevado à potência 53
+    Math.round(.6)              // => 1.0: arredonda para o inteiro mais próximo
+    Math.ceil(.6)               // => 1.0: arredonda para cima para um inteiro
+    Math.floor(.6)              // => 0.0: arredonda para baixo para um inteiro
+    Math.abs(-5)                // => 5: valor absoluto
+    Math.max(x,y,z)             // Retorna o maior argumento
+    Math.min(x,y,z)             // Retorna o menor argumento
+    Math.random()               // Número pseudoaleatório x, onde 0 <= x < 1.0
+    Math.PI                     // π: circunferência de um círculo / diâmetro
+    Math.E                      // e: A base do logaritmo natural
+    Math.sqrt(3)                // A raiz quadrada de 3
+    Math.pow(3, 1/3)            // A raiz cúbica de 3
+    Math.sin(0)                 // Trigonometria: também Math.cos, Math.atan, etc.
+    Math.log(10)                // Logaritmo natural de 10
+    Math.log(100)/Math.LN10     // Logaritmo de base 10 de 100
+    Math.log(512)/Math.LN2      // Logaritmo de base 2 de 512
+    Math.exp(3)                 // Math.E ao cubo
+
+### Datas e horas
+JavaScript básico inclui uma construtora `Date()` para criar objetos que representam datas e horas.
+
+    var then = new Date(2010, 0, 1);        // O 1º dia do 1º mês de 2010
+    var later = new Date(2010, 0, 1,        // O mesmo dia, às 5:10:30 da tarde, hora local 17, 10, 30);
+    var now = new Date();                   // A data e hora atuais
+    var elapsed = now – then;               // Subtração de data: intervalo em milissegundos
+    later.getFullYear()                     // => 2010
+    later.getMonth()                        // => 0: meses com base em zero
+    later.getDate()                         // => 1: dias com base em um
+    later.getDay()                          // => 5: dia da semana. 0 é domingo, 5 é sexta-feira.
+    later.getHours()                        // => 17: 5 da tarde, hora local
+    later.getUTCHours()                     // Horas em UTC; depende do fuso horário
+    later.toString()                        // => "Sexta-feira, 01 de janeiro de 2010, 17:10:30 GMT-0800 (PST)"
+    later.toUTCString()                     // => "Sábado, 02 de janeiro de 2010, 01:10:30 GMT"
+    later.toLocaleDateString()              // => "01/01/2010"
+    later.toLocaleTimeString()              // => "05:10:30 PM"
+    later.toISOString()                     // => "2010-01-02T01:10:30.000Z"; somente ES5
+
+## Texto
+
+### Sequência de escape em string literais
+**Imagine que você está escrevendo uma carta**. Às vezes, você precisa usar símbolos especiais, como uma nova linha para começar um parágrafo ou aspas para destacar uma frase. Em JavaScript, quando você coloca texto dentro de aspas (simples ou duplas), isso é chamado de string. Mas e se você quiser incluir esses símbolos especiais dentro da sua string? É aí que entram as sequências de escape.
+
+**O que são sequências de escape?**
+
+São combinações de caracteres que começam com uma barra invertida () e têm um significado especial. Elas permitem que você represente caracteres que de outra forma seriam difíceis ou impossíveis de incluir diretamente em uma string.
+
+**Por que precisamos delas?**
+
+- Caracteres especiais: Para incluir caracteres como nova linha, tabulação, aspas dentro de aspas, etc.
+
+- Caracteres não imprimíveis: Para representar caracteres que não podem ser digitados diretamente no teclado.
+
+        Sequência	Caractere representado
+        \n	            Nova linha
+        \t	            Tabulação
+        \	            Barra invertida
+        '	            Aspas simples
+        "	            Aspas duplas
+        \b	            Backspace
+        \f	            Form feed
+        \r	            Retorno de carro
+        \0	            o caractere null  
+
+### Trabalhando com string
+Existem vários métodos que podem ser chamados em strings (como
+sempre, consulte a seção de referência para ver detalhes completos):
+
+    var s = "hello, world" // Começa com um texto.
+    s.charAt(0) // => "h": o primeiro caractere.
+    s.charAt(s.length-1) // => "d": o último caractere.
+    s.substring(1,4) // => "ell": o 2º, 3º e 4º caracteres.
+    s.slice(1,4) // => "ell": a mesma coisa
+    s.slice(-3) // => "rld": os últimos 3 caracteres
+    s.indexOf("l") // => 2: posição da primeira letra l.
+    s.lastIndexOf("l") // => 10: posição da última letra l.
+    s.indexOf("l", 3) // => 3: posição do primeiro "l" em ou após 3
+    s.split(", ") // => ["hello", "world"] divide em substrings
+    s.replace("h", "H") // => "Hello, world": substitui todas as instâncias
+    s.toUpperCase() // => "HELLO, WORLD"
+
+### Declaração de variável
+Antes de utilizar uma variável em um programa JavaScript, você deve declará-la. As variáveis são declaradas com a palavra-chave var, como segue:
+
+    var i;
+    var sum;
+
+Também é possível declarar várias variáveis com a mesma palavra-chave var:
+
+    var i, sum;
+
+E pode-se combinar a declaraçào da variável com sua inicialização:
+
+    var message = "hello";
+    var i = o, j = o, k= 0;
+
+Se não for especificado um valor inicial para uma variável com a instrução var, a variável será declarada, mas seu valor será *undefined* até que o código armazene um valor nela.
+
+
+# Escopo de variável
+
