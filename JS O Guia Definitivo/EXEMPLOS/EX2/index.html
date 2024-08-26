@@ -30,7 +30,7 @@
     </tr>
 
     <tr>
-        <td>Amout of the loan ($):</td>
+        <td>Amount of the loan ($):</td>
         <td><input id="amount" onchange="calculate();"></td>
         <td rowspan="8">
             <canvas id="graph" width="400" height="250"></canvas>
@@ -53,7 +53,7 @@
     </tr>
 
     <tr>
-        <th>Approximate Payments:</th>
+        <th>Approximate payments:</th>
         <td><button onclick="calculate();">Calculate</button></td>
     </tr>
 
@@ -74,7 +74,7 @@
 
     <tr>
         <th>Sponsors</th>
-        <td colspan="2">Apply for your loan whit one of these fine lenders: <div id="lenders"></div></td>
+        <td colspan="2">Apply for your loan with one of these fine lenders: <div id="lenders"></div></td>
     </tr>
 
 </table>
@@ -195,10 +195,10 @@ function getLenders(amount, apr, years, zipcode) {
     //codifica a entrada do usuario como parâmetros de consulta em um URL
     var url = "getLenders.php" +            // URL do serviço mais dados do usuario 
                                             //na string de consulta    
-     "?amt" + encodeURIComponent(amount) +  
-    "&apr" + encodeURIComponent(apr) +
-    "&yrs" + encodeURIComponent(years) +
-    "&zcd" + encodeURIComponent(zipcode);
+    "?amt=" + encodeURIComponent(amount) +  
+    "&apr=" + encodeURIComponent(apr) +
+    "&yrs=" + encodeURIComponent(years) +
+    "&zip=" + encodeURIComponent(zipcode);
     
 
     // busca o conteúdo desse URL usando o objeto XMLHttpRequest
@@ -217,7 +217,7 @@ function getLenders(amount, apr, years, zipcode) {
             var lenders = JSON.parse(response);     //analisa em um array JSON
 
             //converte o array de objetos lender em uma string HTML
-            var lista = "";
+            var list = "";
             for (var i = 0; i < lenders.length; i++) {
                 list += "<li><a href='" + lenders[i].url + "'>" + lenders[i].name + "</a></li>";
             }
@@ -268,7 +268,7 @@ function chart(principal, interest, monthly, payments) {
     for(var p = 1; p <= payments; p++) {
         // para cada pagamento, descobre quanto é o juro
         var thisMonthsInterest = (principal-equity)*interest;
-        equity += (monthly = thisMonthsInterest);           // o resto vai para o capital
+        equity += (monthly - thisMonthsInterest);           // o resto vai para o capital
         g.lineTo(paymentToX(p), amountToY(equity));         // linha até este ponto
     }
 
@@ -285,6 +285,7 @@ function chart(principal, interest, monthly, payments) {
     g.beginPath();
     g.moveTo(paymentToX(0), amountToY(bal));
     for(var p = 1; p <= payments; p++) {
+        
         var thisMonthsInterest = bal*interest;
         bal -= (monthly = thisMonthsInterest);  // o resto vai para o capital
         g.lineTo(paymentToX(p), amountToY(bal));// desenha a linha até esse ponto
@@ -304,7 +305,7 @@ function chart(principal, interest, monthly, payments) {
         if (year == 1) g.fillText(year, x, y-5);    //rotula o eixo\
 
         if (year % 5 == 0 && year*12 !== payments) {
-            g.fillText(String(year), x, y-5)
+            g.fillText(String(year), x, y-5);
         } // Numera a cada 5 anos
 
     };
@@ -316,7 +317,7 @@ function chart(principal, interest, monthly, payments) {
     for (var i = 0; i < ticks.length; i++) {
         var y = amountToY(ticks[i]);
         g.fillRect(rightEdge-3, y-0.5, 3,1);
-        g.fillText(String[ticks[i].toFixed(0)], rightEdge-5, y);
+        g.fillText(String(ticks[i].toFixed(0)), rightEdge-5, y);
     }
 
 }
