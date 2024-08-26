@@ -180,11 +180,147 @@ window.onload = function() {
         document.getElementById("zipcode").value = localStorage.loan_zipcode;
     }
 
+};
+
+// Passa a entrada do usuario para um script no lado do servidor que (TEORICAMENTE) pode
+//retornar uma lista de links para financeiras locais interessadas em fazer empréstimos.
+//Este exemplo nào contém a implementação, mas se existisse esse serviço, essa função funcionaria com ele
+
+function getLenders(amount, apr, years, zipcode) {
+    // se o navegador não suporta o objeto XMLHttpRequest, não faz nada
+    if(!window.XMLHttpRequest) return;
+    //localiza o elemento para exibir a lista de financeiras
+    var ad = document.getElementById("lenders");
+    if (!ad) return; // encerra se não há ponto de saida
+    //codifica a entrada do usuario como parâmetros de consulta em um URL
+    var url = "getLenders.php" +            // URL do serviço mais dados do usuario 
+                                            //na string de consulta    
+     "?amt" + encodeURIComponent(amount) +  
+    "&apr" + encodeURIComponent(apr) +
+    "&yrs" + encodeURIComponent(years) +
+    "&zcd" + encodeURIComponent(zipcode);
+    
+
+    // busca o conteúdo desse URL usando o objeto XMLHttpRequest
+    var req = new XMLHttpRequest();     //inicia um novo pedido
+    req.open("GET", url, true);         //um pedido GET da HTTP para o url
+    req.send(null);                     //envia o pedido sem corpo
+
+    // Antes de retornar, registra uma função de rotina de tratamento de evento que será
+    // chamada em um momento posterior, quando a resposta do servidor de HTTP chegar.
+    // Esse tipo de programação assíncrona é muito comum em JavaScript do lado do
+    // cliente.
+    req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {
+            // se chegamos até aqui, obtivemos uma resposta HTTP válida e completa
+            var response = req.responseText;        //resposta HTTp como string
+            var lenders = JSON.parse(response);     //analisa em um array JSON
+
+            //converte o array de objetos lender em uma string HTML
+            var lista = "";
+            for (var i = 0; i < lenders.length; i++) {
+                list += "<li><a href='" + lenders[i].url + "'>" + lenders[i].name + "</a></li>";
+            }
+
+            // exibe o código HTML no elemento acima.
+            ad.innerHTML = "<ul>" + list + "</ul>";
+        }
+    }
+    
+}
+// Faz o gráfico do saldo devedor mensal, dos juros e do capital em um elemento <canvas>
+// da HTML.
+// Se for chamado sem argumentos, basta apagar qualquer gráfico desenhado anteriormente
+function chart(principal, interest, monthly, payments) {
+    var graph = document.getElementById("graph");            // obtem a marca <canvas>
+    graph.width = graph.width;                  // magica para apagar e redefinir o canvas
+
+    //Se chamamos sem argumentos ou se esse navegador não suporta
+    // elementos gráficos em um elemento <canvas>, basta retornar agora.
+    if (arguments.length == 0 || !graph.getContext) return;
+
+    // Obtém o objeto "contexto" de <canvas> que define a API de desenho
+    var g = graph.getContext("2d");    //todo desenho é feito com esse objeto
+    var width = graph.width, height = graph.height; //obtem o tamanho da tela de desenho
+
+    // Essas funções convertem números de pagamento e valores monetários em pixels
+    function paymentToX(n) { return n * width / payments;}
+    function amountToY(a) { return height-(a*height/(monthly*payments*1.05));}
+
+    // Os pagamentos são uma linha reta de (0,0) a (payments, monthly*payments)
+    g.moveTo(paymentToX(0), amountToY(0));    //começa no canto inferior esquerdo
+    g.lineTo(paymentToX(payments),            //desenha até o canto superior direito
+        amountToY(monthly*payments)); 
+    g.lineTo(paymentToX(payments), amountToY(0)); // para baixo, até o canto inferior esquerdo
+
+    g.closePath();                                  //e vonta ao inicio
+    g.fillStyle = "#f88";                           // vermelho claro
+    g.fill();                                       //preenche o triangulo
+    g.font = "bold 12px sans-serif";               // tipo de fonte e tamanho
+    g.fillText("Total Interest Payments", 20,20)    // desenha texto na legenda
+
+
+    // O capital acumulado não é linear e é mais complicado de representar no gráfico
+    var equity = 0;
+    g.beginPath();                              //inicia uma nova figura
+    g.moveTo(paymentToX(0), amountToY(0));      //começando no canto inferior esquerdo
+
+    for(var p = 1; p <= payments; p++) {
+        // para cada pagamento, descobre quanto é o juro
+        var thisMonthsInterest = (principal-equity)*interest;
+        equity += (monthly = thisMonthsInterest);           // o resto vai para o capital
+        g.lineTo(paymentToX(p), amountToY(equity));         // linha até este ponto
+    }
+
+    g.lineTo(paymentToX(payments), amountToY(0));           //linha de volta para o eixo y
+    g.closePath();                                          //e vonta ao inicio
+    g.fillStyle = "green";                                  // agora usa tinta verde
+    g.fill();                                               //preenche a área sob a curva
+    g.fillText("Total Equity", 20, 35);                     //rotula em verde
+
+
+    // Faz laço novamente, como acima, mas representa o saldo devedor como uma linha
+    // preta grossa no gráfico
+    var bal = principal;
+    g.beginPath();
+    g.moveTo(paymentToX(0), amountToY(bal));
+    for(var p = 1; p <= payments; p++) {
+        var thisMonthsInterest = bal*interest;
+        bal -= (monthly = thisMonthsInterest);  // o resto vai para o capital
+        g.lineTo(paymentToX(p), amountToY(bal));// desenha a linha até esse ponto
+    }
+    g.lineWidth = 3;                    // usa uma linha grossa
+    g.stroke();                         // desenha a curva do saldo
+    g.fillStyle = "black";              // troca para o texto preto
+    g.fillText("Loan Balance", 20, 50); // entrada da legenda
+
+    // Agora faz marcações anuais e os números de ano no eixo X
+    g.textAlign="center";               // centraliza o texto nas marcas
+
+    var y =amountToY(0);                            //coordenada Y do eixo X
+    for(var year=1; year*12 <= payments; year++) {  //para cada ano
+        var x = paymentToX(year*12);                //calcula a posicao da marca
+        g.fillRect (x-0.5, y-3,1,3);                //desenha a marca
+        if (year == 1) g.fillText(year, x, y-5);    //rotula o eixo\
+
+        if (year % 5 == 0 && year*12 !== payments) {
+            g.fillText(String(year), x, y-5)
+        } // Numera a cada 5 anos
+
     };
+    // Marca valores de pagamento ao longo da margem direita
+    g.textAlign = "right";
+    g.textBaseline = "middle";
+    var ticks = [monthly*payments, principal];
+    var rightEdge = paymentToX(payments);
+    for (var i = 0; i < ticks.length; i++) {
+        var y = amountToY(ticks[i]);
+        g.fillRect(rightEdge-3, y-0.5, 3,1);
+        g.fillText(String[ticks[i].toFixed(0)], rightEdge-5, y);
+    }
 
-
-
-
+}
+         
 </script>
 
 
