@@ -4,4 +4,4 @@ Aqui eu estou anotando informações úteis sobre Java Script, por exemplo:
 
 ### Dados do JavaScript, o que cada coisa faz, o porque, e como usar.
 
-![JavaScript Icon](https://img.icons8.com/color/48/javascript--v1.png)[Dados, métodos e propriedades do JavaScript.](https://github.com/jefersonbraine/README-JavaScript/tree/master/JS%20Data)
+![JavaScript Icon](https://img.icons8.com/color/100/javascript--v1.png)[Dados, métodos e propriedades do JavaScript.](https://github.com/jefersonbraine/README-JavaScript/tree/master/JS%20Data)
