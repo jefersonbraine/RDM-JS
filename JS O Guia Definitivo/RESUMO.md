@@ -308,3 +308,90 @@ O exemplo demonstra vários recursos da linguagem básica e também importantes 
  - como armazenar dados no navegador
  - Com fazer requisições HTTP em scripts
  - Como desenhar gráficos com o elemento <canvas>
+
+ # Estrutura léxica
+
+ ## 2.1. Conjunto de caracteres
+ Os programas JS são escritos com o o conjunto de caracteres Unicode, que é um superconjunto de ASCCI e Latin-1, suportando praticamente todos os idiomas escritos usados hoje.
+
+ ### 2.1.1 Maiúscuals e minúsculas
+ JS diferencia letras maiúsculas de minúsculas, isso significa que palavras-chaves, variáveis, nomes de função e outros identificadores da linguagem sempre devem ser digitados da mesma forma, a palavra-chave `while`, pode exemplo, deve ser digitada `while` e não `While` ou `WHILE`. Da mesma forma, online, Online, OnLine e ONLINE, são quatros nomes totalmente diferentes.
+
+ ### 2.1.2 Espaço em branco, quebras de linhas e caracteres de controle de formato
+O JS ignora os espaços que aparecem entre sinais em programas, como também ignora quebras de linhas (mas existe uma exceção na seção 2.5), mas é possivel usar formatando e endentando os programas de um modo organizado e harmonioso.
+
+Além do caractere de espaço normal (\u0020), JavaScript também reconhece os seguintes caracteres como espaço em branco: tabulação (\u0009), tabulação vertical ( \u000B), avanço de página ( \u000C), espaço não separável (\u00A0), marca de ordem de byte (\uFEFF) e qualquer caractere unicode da categoria Zs. JavaScript reconhece os seguintes caracteres como términos de linha: avanço de linha ( \u000A), retorno de carro (\u000D), separador de linha (\u2028) e separador de parágrafo (\u2029). Uma sequência retorno de carro, avanço de linha é tratada como um único término de linha.
+
+Os caracteres de controle de formato Unicode (categoria Cf ), como RIGHT-TO-LEFT MARK
+( \u200F ) e LEFT-TO-RIGHT MARK ( \u200E ), controlam a apresentação visual do texto em que
+ocorrem. Eles são importantes para a exibição correta de alguns idiomas e são permitidos em comen-tários, strings literais e expressões regulares literais de JavaScript, mas não nos identificadores (por exemplo, nomes de variável) de um programa JavaScript. Como casos especiais, ZERO WIDTH JOINER ( \u200D ) e ZERO WIDTH NON-JOINER ( \u200C ) são permitidos em identificadores, mas não como o primeiro caractere. Conforme observado anteriormente, o caractere de controle de formato de marca de ordem de byte (\uFEFF) é tratado como caractere de espaço.
+
+## 2.2 Comentários
+
+    // Comentário de uma linha
+    /* Este também é um comentário */ // e aqui está outro comentário.
+    /*
+    * Este é ainda outro comentário.
+    * Ele tem várias linhas.
+    */
+
+## 2.3 Literais
+Um literal é um valor de dados que aparece diretamente em um programa. Os valores seguintes são todos literais:
+12                  // O número doze
+1.2                 // O número um ponto dois
+"hello world"       // Uma string de texto
+'Hi'                // Outra string
+true                // Um valor booleano
+false               // O outro valor booleano
+/javascript/gi      // Uma "expressão regular" literal (para comparação de padrões)
+null                // Ausência de um objeto
+
+## 2.4 Identificadores e palavras reservadas
+Um identificador é simplesmente um nome, eles são usados para nomes a variáveis e funções para fornecer rótulos para certos laços no código JavaScript, um identificador deve começar com uma letra, um sublinhado(_) ou um cifrão($), já os seguintes podem ser letras, digitos, sublinhados ou cifrões.
+
+Todos estes são identificadores válidos:
+
+    i
+    my_variable_name
+    v13
+    _dummy
+    $str
+
+## 2.5 Pontos e vírgulas opcionais
+Em JavaScript, você normalmente pode omitir o ponto e vírgula entre duas instruções, caso essas instruções sejam escritas em linhas separadas. (Você também pode omitir um ponto e vírgula no final de um programa ou se o próximo sinal do programa for uma chave de fechamento `}`.)
+
+Muitos programadores JavaScript (e o código deste livro) utilizam pontos e vírgulas para marcar explicitamente os finais de instruções, mesmo onde eles não são obrigatório.
+
+Considere o código a seguir. Como as duas instruções aparecem em linhas separadas, o primeiro
+ponto e vírgula poderia ser omitido:
+
+    a = 3;
+    b = 4;
+
+Contudo, escrito como a seguir, o primeiro ponto e vírgula é obrigatório:
+
+    a = 3; b = 4;
+
+JavaScript não trata toda quebra de linha como ponto e vírgula, geralmente trata as quebras de linha como pontos e vírgulas somente se não consegue analisar o código sem os pontos e vírgulas. Mais formalmente (e com as duas exceções, descritas a seguir), JavaScript trata uma quebra de linha como ponto e vírgula caso o próximo caractere que não seja espaço não possa ser interpretado como a continuação da instrução corrente. Considere o código a seguir:
+
+    var a
+    a
+    =
+    3
+    console.log(a)
+
+JavaScript interpreta esse código como segue:
+
+    var a; a = 3; console.log(a);
+
+avaScript trata a primeira quebra de linha como ponto e vírgula porque não pode analisar o código. O segundo a poderia aparecer sozinho como a instrução a; , mas JavaScript não trata a segunda quebra de linha como ponto e vírgula porque pode continuar analisando a instrução mais longa a = 3;.
+
+O código a seguir parece ser duas instruções distintas, separadas por uma nova linha:
+
+    var y = x + f
+    (a+b).toString()
+
+Porém, os parênteses na segunda linha de código podem ser interpretados como uma chamada de
+função de f da primeira linha, sendo que JavaScript interpreta o código como segue:
+
+    var y = x + f(a+b).toString();
