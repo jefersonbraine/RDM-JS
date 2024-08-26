@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de empréstimos</title>
+    <style> /* Está é uma folha de estilos CSS: ela adiciona estilo na saída do programa */
+        .output {
+            font-weight: bold;              /* valores calculados em negrito */
+        }
+        #payment {                          /* Elemento com id="payment" */
+            text-decoration: underline;
+        }
+        #graph {                             /* O gráfico tem borda simples */
+            border: solid black 1px;
+        }
+
+        th, td {                             /* Não centraliza células da tabela */
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!-- Esta é uma tabela HTML com elementos <input> que permitem ao usuário inserir dados e elementos ,<span> nos quais o programa pode exibir seus resultados. Esses elementos têm identificações como "interest" e "years". Essas identificações são usadas no código JS que vem após a tabela. Note que alguns dos elementos de entrada definem rotinas de tratamento de evento "onchange" ou "onclick". Elas especificam strings de código JS a ser executado quando o usuário insere dados ou dá um clique-->
+<table>
+    <tr>
+        <th>Enter Loan Data:</th>
+        <td></td>
+        <th>Loan Balance, Cumulative Equity, and Interest Payments</th>
+    </tr>
+
+    <tr>
+        <td>Amout of the loan ($):</td>
+        <td><input id="amount" onchange="calculate();"></td>
+        <td rowspan="8">
+            <canvas id="graph" width="400" height="250"></canvas>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Annual interest (%):</td>
+        <td><input id="apr" onchange="calculate();"></td>
+    </tr>
+
+    <tr>
+        <td>Repayment period (years):</td>
+        <td><input id="years" onchange="calculate();"></td>
+    </tr>
+
+    <tr>
+        <td>Zipcode (to find lenders):</td>
+        <td><input id="zipcode" onchange="calculate();"></td>
+    </tr>
+
+    <tr>
+        <th>Approximate Payments:</th>
+        <td><button onclick="calculate();">Calculate</button></td>
+    </tr>
+
+    <tr>
+        <td>Monthly payment:</td>
+        <td>$<span class="output" id="payment"></span></td>
+    </tr>
+
+    <tr>
+        <td>Total payment:</td>
+        <td>$<span class="output" id="total"></span></td>
+    </tr>
+
+    <tr>
+        <td>Total interest:</td>
+        <td>$<span class="output" id="totalinterest"></span></td>
+    </tr>
+
+    <tr>
+        <th>Sponsors</th>
+        <td colspan="2">Apply for your loan whit one of these fine lenders: <div id="lenders"></div></td>
+    </tr>
+
+</table>
+
+<!-- O restante deste exemplo é código JS na marca, <script> a seguir-->
+<!-- Normalmente, este ficaria na marca <head> do documento acima, mas-->
+<!-- é mais fácil entendê-lo aqui, depois de ter visto seu contexto HTML.-->
+
+<script>
+"use strict" //usa o modo restrico ECMAscript 5 nos navegadores que o suportam
+
+/*
+Este script define a função calculate() chamada peals rotinas de tratamento de envento
+no código HTML acima. A funçõa lê valores de elementos <input>, calcula as
+informações de pagamento de empréstimo, exibe o resultado em elementos <span>.
+Também salva os dados do usuário, exibe links para financeiras e desenha um gráfico
+*/
+
+
+function calculate() {
+    // pesquisa os elementos de entrada e saída no documento
+
+    var amount = document.getElementById("amount")
+    var apr = document.getElementById("apr")
+    var years = document.getElementById("years")
+    var zipcode = document.getElementById("zipcode")
+    var payment = document.getElementById("payment")
+    var total = document.getElementById("total")
+    var totalinterest = document.getElementById("totalinterest")
+
+    // obtém a entrada do usuário através dos elementos de entrada. presume que tudo isso
+    // é válido.
+    // Convete os juros de porcentagem para decimais e converte a taxa
+    // anual para taxa mensal. Converte o período de pagamento em anos
+    // para o número de pagamentos mensais.
+
+    var principal = parseFloat(amount.value);
+    var interest = parseFloat(apr.value) / 100 / 12;
+    var payments = parseFloat(years.value) * 12;
+
+    // agora calula o valor do pagamento mensal.
+
+    var x = Math.pow(1 + interest, payments); // Math.pow() calcula potências
+    var monthly = (principal * x * interest) / (x - 1);
+
+    // se o resultado é um número finito, a entrada do usuário estava correta e 
+    // temos resultados significativos para exibir
+
+    if (isFinite(monthly)) {
+        //preenche  os campos de saida, arredondando para 2 casas decimais
+
+        payment.innerHTML = monthly.toFixed(2);
+        total.innerHTML = (monthly * payments).toFixed(2);
+        totalinterest.innerHTML = ((monthly * payments) - principal).toFixed(2);
+
+        // salva a entrada do usuário para que possamos recuperá-la na próxima vez que ele visitar
+
+        save(amount.value, apr.value, years.value, zipcode.value);
+
+        // anuncio: localiza e exibe financeiras locais, mas ignora erros de rede
+
+        try { //caputra quaisquer erros que ocorram dentro destas chaves
+            getLenders(amount.value, apr.value, years.value, zipcode.value);
+    }
+    catch(e) { /* e ignora esses erros*/ }
+
+    // por fim, traça o gráfico do saldo devedor, dos juros e dos pagamentos do capital
+    chart(principal, interest, monthly, payments);
+    
+    } else {
+        //o resultado foi Not-a-Number ou infinito, o que significa que a entrada estava incompleta ou era inválida. Apaga qualquer saida exibida anteriormente.
+        payment.innerHTML = ""; // paga o conteúdo desses elementos
+        total.innerHTML = "";
+        totalinterest.innerHTML = "";
+        chart();    // sem argumentos, apaga o gráfico
+
+    }
+}
+
+
+// salva a entrada do usuário como propriedades do objeto localStorage. Essas
+// propriedades ainda existirão quando o usuário visitar no futuro
+// esse recurso de armazenamento não vai funcionar em alguns navegadores ( Firefox por exemplo)
+// se voce executar o exemplo a partir de um arquivo local://URL. contudo, funciona com HTTP.
+
+function save(amount, apr, years, zipcode) {
+    if (window.localStorage) { // só faz isso se o navegador suportar
+        localStorage.loan_amount = amount;
+        localStorage.loan_apr = apr;
+        localStorage.loan_years = years;
+        localStorage.loan_zipcode = zipcode;
+    }
+}
+
+// Tenta restaurar os campos de entrada automaticamente quando o documento é carregado
+// pela primeira vez.
+window.onload = function() {
+    // se o navegador suporta localStorage e temos alguns dados armazenados
+    if(window.localStorage && localStorage.loan_amount) {
+        document.getElementById("amount").value = localStorage.loan_amount;
+        document.getElementById("apr").value = localStorage.loan_apr;
+        document.getElementById("years").value = localStorage.loan_years;
+        document.getElementById("zipcode").value = localStorage.loan_zipcode;
+    }
+
+    };
+
+
+
+
+</script>
+
+
+</body>
+</html>

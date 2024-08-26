@@ -263,4 +263,48 @@ Se o documento não contém esta seção, cria uma.
         log.appendChild(pre);                       // adiciona o <pre> no log
     }
 
-    página 10
+    
+
+### Rotinas de tratamento de evento.
+Uma rotina de tratamento de evento é uma função JS que registramos no navegador e que este chama quando ocorre algum tipo de evento especificado, pode ser um cloque, pressionamento de tecla (ou em um celular, um gesto de algum tipo) ou então, uma rotina de tratamento de evento pode ser ativada quando o navegador termina de carregar o documento, quando o usuário redimensiona a janela ou quando é inserido dados em um formulário HTML.
+
+O modo mais simples de definir rotinas de tratamento de evento é com atributos HTML, que começam com "on". O "onclick" é bem útil; quando está se escrevendo programas simples.
+
+Aqui está um código do lado do cliente que utiliza eventos, ele registra uma rotina de tratamento de evento, para o evento "load" e também demonstra uma maneira mais sofisticada de registrar funções de rotina de tratamento de evento "click".
+
+    //O vento 'load" ocorre quando um documento está totalmente carregado. Normalmente
+    //precisamos esperar por esse evento antes de começarmos a executar.
+
+    window.onload = function() {            // Executa esta funçõa quando o documento for carregado
+        //localiza todas as marcas <img> no documento
+        var images - document.getElementsByTagName("img");
+
+        // faz um laço por elas, adicionando uma rotina de tratamento de evento "click"em
+        //cada uma para que clicar na imagem a oculte
+
+        for(var i = 0; i < images.length; i++) {
+            var image = images[i];
+            if (image.addEventListener) { // outro modo de registrar uma rotina de tratamento
+                
+                image.addEventListener("click", hide, false);
+
+            } else {                    // para compatibilidade com IE8 e anteriores
+                image.attachEvent("onclick", hide);
+            }
+        }
+
+        // está é a funçào de rotina para tratamento de evento registrada anteriormente 
+        function hide(event) { event.target.style.visibility = "hidden"; }
+
+    }
+
+## Exemplo de calculadora de empréstimos no EX2
+
+O exemplo demonstra vários recursos da linguagem básica e também importantes técnicas do lado do cliente.
+
+ - Como localizar elementos em um documento
+ - Como obter entrada do usuário a partir de elementtos de entrada de formulários.
+ - Como definir o conteúdo HTML de elementos do documento
+ - como armazenar dados no navegador
+ - Com fazer requisições HTTP em scripts
+ - Como desenhar gráficos com o elemento <canvas>
