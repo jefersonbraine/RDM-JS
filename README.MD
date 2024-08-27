@@ -24,7 +24,7 @@ As informações estão sendo atualizadas com o passar do tempo, acesse essa pá
 # Sobre meu Notion
 Eu estou compartilhando meu conhecimento e habilidades em programação JavaScript através de meu Notion. Você pode acessar o conteúdo abaixo para aprender mais!
 
-🔗[**Acesse por aqui**](https://jefersonbraine.notion.site/Java-Script-4c7d2a82580b4952ab9f79fea7f1c3df)
+🔗[**Acesse por aqui**](https://jefersonbraine.notion.site/Java-Script-4c7d2a82580b4952ab9f79fea7f1c3df) <br/>
 No meu Notion, você encontrará uma coleção de anotações e exercícios que eu estou fazendo para aprender e melhorar minhas habilidades em programação JavaScript.
 
 ** Sinta-se à vontade para se juntar!**
