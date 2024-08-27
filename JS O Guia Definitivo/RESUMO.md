@@ -567,3 +567,145 @@ Se não for especificado um valor inicial para uma variável com a instrução v
 
 # Escopo de variável
 
+Escopo de variável é a região do código-fonte de seu programa em que ela está definida. Uma variável global tem escopo global, está definida em toda parte do seu código, por outro lado as variáveis declaradas dentro de uma funçào ficam definidas apenas dentro do corpo da função, são * variaveis locais * e tem escopo local.
+
+Se você declarar uma variável local ou um parâmetro de função com o mesmo nome de uma variável global, ela **efetivamente oculta a variável global*:
+
+    var scope = "global";           // declara uma variável global
+    funciton checkScope() {         
+        var scope = "local";        // declara uma variável local com o mesmo nome
+        return scope;               // retorna o valor local, não o global
+    }
+
+    checkScope()                    // => "local"
+
+
+# Expressões e operadores
+Uma expressão é uma frase de código JS que um interpretador JavaScript pode avaliar para produzir um valor, uma constante incorporada em seu programa é um tipo de expressão muito simples, nome de variável também é uma expressão simples. Expressões complexas são formadas a partir de expressões mais simples.
+
+## Expressões primárias
+
+São valores constantes ou liteais, certas palavras-cahve da linguagem e referências a variáveis.
+
+Os literais são valores constantes incorporados diretamente em seu programa. São como segue:
+
+    1.23            // Um número literal
+    "hello"         // Uma string literal
+    /pattern/       // Uma expressão regular literal
+
+Algumas das palavras reservadas de JavaScript são expressões primárias:
+
+    true        // É avaliado como o valor booleano true
+    false       // É avaliado como o valor booleano false
+    null        // É avaliado como o valor null
+    this        // É avaliado como o objeto "atual
+
+Por fim, o terceiro tipo de expressão primária é a referência à variável simples:
+
+    	i           // É avaliada como o valor da variável i.
+    	sum         // É avaliada como o valor da variável sum.
+    	undefined   // undefined é uma variável global e não uma palavra-chave como null.
+
+## Inicializadores de objeto e array
+São expressões cujo valor é um objeto ou array recém-criado, às vezes chamadas de "objetos literais" e "array literais". Contudo ao contrário dos verdadeiros literais, elas não são expressões primárias, pois tem várias `subexpressões` que especificam valores de propriedade e elemento.
+
+O inicializador de array é uma lista de expressões separadas com vírgulas e contidas em colchetes.
+
+    []          // Um array vazio: nenhuma expressão dentro dos colchetes significa nenhum
+                // elemento
+    [1+2,3+4]   // Um array de 2 elementos. O primeiro elemento é 3, o segundo é 7
+
+As expressões de elemento em um inicializador de array podem ser elas próprias inicializadoras de array, ou seja, essas expressões podem criar arrays aninhados:
+
+    var matrix = [[1,2,3], [4,5,6], [7,8,9]];
+
+Elementos indefinidos podem ser incluídos em um array literal simplesmente omitindo-se um valor entre vírgulas. Por exemplo, o array a seguir contém cinco elementos, incluindo três indefinidos:
+
+    var sparseArray = [1,,,,5];
+
+As expressões inicializadoras de objeto são como as expressões inicializadoras de array, mas os colchetes são substituídos por chaves e cada subexpressão é prefixada com um nome de propriedade e dois-pontos:
+
+    var p = { x:2.3, y:-1.2 };      // Um objeto com 2 propriedades
+    var q = {};                     // Um objeto vazio sem propriedades
+    q.x = 2.3; q.y = -1.2;          // Agora q tem as mesmas propriedades de p
+
+Objetos literais podem ser aninhados. Por exemplo:
+
+    var rectangle = { upperLeft: { x: 2, y: 2 },
+                    lowerRight: { x: 4, y: 5 } };
+
+## Expressões de definição de função
+Uma expressão de definição de função define uma função JavaScript e o valor de tal expressão é a função recém-definida. De certo modo, uma expressão de definição de função é uma “função literal”, da mesma maneira que um inicializador de objeto é um “objeto literal”. Normalmente, uma expressão de definição de função consiste na palavra-chave function seguida de uma lista separadacom vírgulas de zero ou mais identificadores (os nomes de parâmetro) entre parênteses e um bloco de código JavaScript (o corpo da função) entre chaves. Por exemplo
+
+    // Esta função retorna o quadrado do valor passado a ela.
+    var square = function(x) { return x * x; }
+
+## Expressões de acesso à propriedade
+É avaliada com o valor de uma propriedade de objeto ou de um elemento de array. JavaScript define duas sintaxes para acesso à propriedade:
+
+    expressão . identificador
+    expressão [ expressão ]
+
+O primeiro estilo de acesso à propriedade é uma expressão seguida de um ponto-final e um identificador. A expressão especifica o objeto e o identificador especifica o nome da propriedade desejada.O segundo estilo de acesso à propriedade tem outra expressão entre colchetes após a primeira (o objeto ou array). Essa segunda expressão especifica o nome da propriedade desejada ou o índice do elemento do array desejado. Aqui estão alguns exemplos concretos:
+
+    var o = {x:1,y:{z:3}};      // Um exemplo de objeto
+    var a = [o,4,[5,6]];        // Um exemplo de array que contém o objeto
+    o.x                         // => 1: propriedade x da expressão o
+    o.y.z                       // => 3: propriedade z da expressão o.y
+    o["x"]                      // => 1: propriedade x do objeto o
+    a[1]                        // => 4: elemento no índice 1 da expressão a
+    a[2]["1"]                   // => 6: elemento no índice 1 da expressão a[2]
+    a[0].x                      // => 1: propriedade x da expressão a[0]
+
+A sintaxe .identificador é a mais simples das duas opções de acesso à propriedade, mas note que ela só pode ser usada quando a propriedade que se deseja acessar tem um nome que é um identificador válido e quando se sabe o nome ao escrever o programa.
+
+## Expressões de invocação
+É uma sintaxe de JavaScript para chamar (ou executar) uma função ou método, ela começa com uma expressào de função que identifica a função a ser chamada, é seguida por um parêntese de abertura, uma lista separada com vírgulas de zero ou mais expressões de argumento e um parêntese de fechamento, Exemplos:
+
+    f(0)                // f é a expressão de função; 0 é a expressão de argumento.
+    Math.max(x,y,z)     // Math.max é a função; x, y e z são os argumentos.
+    a.sort()            // a.sort é a função; não há argumentos.
+
+Quando uma expressão de invocação é avaliada, a expressão de função é avaliada primeiro e depois as expressões de argumento são avaliadas para produzir uma lista de valores de argumento. Se o valor da expressão de função não é um objeto que possa ser chamado, é lançado um TypeError. Todas as funções podem ser chamadas.
+
+## Expressões de criação de objeto
+Gera um novo objeto e chama uma função (denominada construtora) para inicializar as propriedades desse objeto, as expressão de criação de objeto são como as expressões de chamada, exceto que são prefixadas com a palavra-chave `new`:
+
+    new Object()                // Cria um objeto vazio
+    new Point(x, y)             // Cria um novo objeto Point com os argumentos x e y
+
+Se nenhum argumento é passado para a função construtora em uma expressão de criação de objeto,
+o par de parênteses vazio pode ser omitido:
+
+    new Object
+    new Date
+
+## Operador delete
+delete é um operador unário que tenta excluir a propriedade do objeto ou elemento do array es-
+pecificado como operando 1 . Assim como os operadores de atribuição, incremento e decremento,
+delete é normalmente usado por seu efeito colateral de exclusão de propriedade e não pelo valor que retorna. Alguns exemplos:
+
+    var o = { x: 1, y: 2};      // Começa com um objeto
+    delete o.x;                 // Exclui uma de suas propriedades
+    "x" in o                    // => falso: a propriedade não existe mais
+
+    var a = [1,2,3];            // Começa com um array
+    delete a[2];                // Exclui o último elemento do array
+    2 in a                      // => falso: o elemento array 2 não existe mais
+    a.length                    // => 3: note que o comprimento do array não muda
+
+Aqui estão alguns exemplos de uso do operador delete
+
+    var o = {x:1, y:2};         // Define uma variável; a inicializa com um objeto
+    delete o.x;                 // Exclui uma das propriedades do objeto; retorna true
+    typeof o.x;                 // A propriedade não existe; retorna "indefinido"
+    delete o.x;                 // Exclui uma propriedade inexistente; retorna true
+    delete o;                   // Não pode excluir uma variável declarada; retorna false.
+                                // Lançaria uma exceção no modo restrito.
+    delete 1;                   // O argumento não é lvalue: retorna true
+    this.x = 1;                 // Define uma propriedade do objeto global a sem var
+    delete x;                   // Tenta excluí-la: retorna true no modo não restrito
+                                // Exceção no modo restrito. Use 'delete this.x' em vez disso
+    x;                          // Erro de execução: x não está definida
+
+# Instruções
