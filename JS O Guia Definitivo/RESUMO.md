@@ -709,3 +709,5 @@ Aqui estão alguns exemplos de uso do operador delete
     x;                          // Erro de execução: x não está definida
 
 # Instruções
+
+86/104
